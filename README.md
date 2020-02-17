@@ -1,7 +1,6 @@
 # BirdBook
 
-Bernadette Plaisted 
-#was here
+Bernadette Plaisted was here
 
 Sean Eigle
 
