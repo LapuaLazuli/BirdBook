@@ -1,11 +1,11 @@
-# BirdBook
+#BirdBook
 
-Bernadette Plaisted was here
+Bernadette Plaisted
 
-Sean Eigle
-
-Nathan Moreno
+Jacob Steelsmith
 
 Joseph Flaherty
 
-Jacob Steelsmith
+Nathan Moreno
+
+Sean Eigle
