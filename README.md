@@ -1,6 +1,11 @@
-# BirdBook
-bernadette plaisted was here
-Sean Eigle
-Nathan Moreno
-Joseph Flaherty
+BirdBook
+
+Bernadette Plaisted
+
 Jacob Steelsmith
+
+Joseph Flaherty
+
+Nathan Moreno
+
+Sean Eigle
