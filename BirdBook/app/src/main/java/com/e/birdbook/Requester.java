@@ -12,7 +12,7 @@ public class Requester
         if(request != null)
         {
             //TODO: update after discussing with designer of database accessor
-            //this.results = requester.makeQuery(this.request);
+            //this.results = accessor.makeQuery(this.request);
         }
         else
             System.out.println("Error: Request null");
