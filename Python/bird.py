@@ -1,9 +1,12 @@
 import urllib.request
 from xml.etree.ElementTree import Element, SubElement, tostring
 from xml.dom import minidom
+import re
 
 finding = ''
-web_url = 'https://www.allaboutbirds.org/guide/American_Crow'
+web_url = 'https://www.allaboutbirds.org/guide/Western_Gull'
+
+web_url = input("Input a url: ")
 
 with urllib.request.urlopen(web_url) as response:
     for line in response:
@@ -30,7 +33,14 @@ with urllib.request.urlopen(web_url) as response:
     for line in response:
         line = line.decode('utf-8')
         if('Relative Size' in line):
-            print(line)
+            shape_search = re.search("<article><p>([\w,.'\-(); ]*)</p>", line)
+            if(shape_search != None):
+                print(shape_search.group(1))
+            size_search = re.search("Relative Size</h5><p>([\w,.'\-(); ]*)</p>", line)
+            if(size_search == None or len(size_search.group(1)) < 1):
+                size_search = re.search("<span>([\w,.'\-(); ]*)</span><h5>Measurements", line)
+            print(size_search.group(1))
+            #print(line)
 
 print('\n\n~~~\n\n')
 
