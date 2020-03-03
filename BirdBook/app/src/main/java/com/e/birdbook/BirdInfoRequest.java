@@ -14,11 +14,15 @@ public class BirdInfoRequest implements Request
     public BirdInfoRequest()
     {
         this.requestFields = new ArrayList<String>();
+        this.searchValue = null;
+        this.searchField = null;
     }
 
-    public BirdInfoRequest(List<String> requestFields)
+    public BirdInfoRequest(List<String> requestFields, String searchField, String searchValue)
     {
         this.requestFields = requestFields;
+        this.searchField = searchField;
+        this.searchValue = searchValue;
     }
 
     @Override
