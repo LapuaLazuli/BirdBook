@@ -23,16 +23,16 @@
                 android:id="@+id/infoName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Name placeholder"
-                android:textSize="48sp"
-                />
+                android:textSize="48sp" />
 
             <ImageView
                 android:id="@+id/infoImage"
                 android:layout_width="350dp"
                 android:layout_height="250dp"
-                android:layout_marginHorizontal="30dp"/>
+                android:layout_marginHorizontal="30dp" />
 
             <TextView
                 android:id="@+id/descriptionHeader"
@@ -48,6 +48,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:maxLines="4"
                 android:padding="2dp"
                 android:text="Description Placeholder"
                 android:textSize="16sp" />
@@ -66,6 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Size Placeholder"
                 android:textSize="16sp" />
@@ -84,6 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Shape Placeholder"
                 android:textSize="16sp" />
@@ -102,6 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Finding Placeholder"
                 android:textSize="16sp" />
@@ -120,6 +125,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Habitat Placeholder"
                 android:textSize="16sp" />
@@ -138,6 +144,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Diet Placeholder"
                 android:textSize="16sp" />
@@ -156,6 +163,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Nest Placeholder"
                 android:textSize="16sp" />
@@ -174,6 +182,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Behavior Placeholder"
                 android:textSize="16sp" />
@@ -192,6 +201,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Conservation Placeholder"
                 android:textSize="16sp" />
