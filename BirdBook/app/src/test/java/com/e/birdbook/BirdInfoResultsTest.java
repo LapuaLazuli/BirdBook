@@ -65,4 +65,3 @@ public class BirdInfoResultsTest
 
         assertEquals(dict, res.getResults());
     }
-}

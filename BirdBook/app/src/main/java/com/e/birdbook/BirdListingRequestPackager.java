@@ -5,7 +5,6 @@ import java.util.List;
 
 public class BirdListingRequestPackager
 {
-
     public static BirdInfoRequest createListingRequest()
     {
         List<String> requestFields = new ArrayList<String>();
