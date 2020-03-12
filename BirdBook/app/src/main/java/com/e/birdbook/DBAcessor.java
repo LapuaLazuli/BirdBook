@@ -1,12 +1,11 @@
 package com.e.birdbook;
 import java.sql.*;
 import java.util.Dictionary;
-import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.List;
 
 public class DBAcessor {
-    public static Results Access(Request query) throws Exception {
+    public static Results access(Request query) throws Exception {
         //connects code to bird.db
         Class.forName("org.sqlite.JDBC");
         Connection conn = DriverManager.getConnection("jdbc:sqlite:bird.db");
@@ -39,6 +38,4 @@ public class DBAcessor {
         //returns BirdInfoResults class
         return ret;
     }
-
-
 }

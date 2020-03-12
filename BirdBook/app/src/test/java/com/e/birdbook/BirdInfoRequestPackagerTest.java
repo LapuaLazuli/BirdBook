@@ -1,10 +1,9 @@
 package com.e.birdbook;
 
 import org.junit.Test;
+import org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.Dictionary;
-import java.util.Hashtable;
 import java.util.List;
 
 import static junit.framework.Assert.assertNotNull;
