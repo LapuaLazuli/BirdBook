@@ -21,7 +21,9 @@ public class DBAcessor {
         //begins parsing database
         ResultSet rs = stat.executeQuery("select * from birds;");
 
-        while (rs.next()) {
+        boolean found = false;
+
+        while (rs.next() && !found) {
             if (v.equals(rs.getString(f))) { //checks if searchValue matches the value of corresponding searchField
                 d.put(f, v); //puts successful match into dictionary
                 //begin loading in requestedFields values into dictionary
@@ -29,6 +31,7 @@ public class DBAcessor {
                     //loads in field from list l and corresponding value found in <birds> entry
                     d.put(q, rs.getString(q));
                 }
+                found = true;
             }
         }
         rs.close();
