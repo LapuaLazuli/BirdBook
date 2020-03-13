@@ -1,14 +1,29 @@
+package com.e.birdbook;
+
 public class Bird {
-    private String name, descripton, finding, habitat, diet, nest, behavior, conservation, size, shape;
+    private String name, description, finding, habitat, diet, nest, behavior, conservation, size, shape;
 
     public Bird(){}
+
+    public Bird(String name, String description, String finding, String habitat, String diet, String nest, String behavior, String conservation, String size, String shape){
+        this.name = name;
+        this.description = description;
+        this.finding = finding;
+        this.habitat = habitat;
+        this.diet = diet;
+        this.nest = nest;
+        this.behavior = behavior;
+        this.conservation = conservation;
+        this.size = size;
+        this.shape = shape;
+    }
 
     public void setName(String name) {
         this.name = name;
     }
 
     public void setDescripton(String descripton) {
-        this.descripton = descripton;
+        this.description = descripton;
     }
 
     public void setFinding(String finding) {
@@ -47,8 +62,8 @@ public class Bird {
         return name;
     }
 
-    public String getDescripton() {
-        return descripton;
+    public String getDescription() {
+        return description;
     }
 
     public String getFinding() {
