@@ -17,10 +17,10 @@ public class BPTest {
         d.put("name", "American Crow");
         BirdInfoResults r = new BirdInfoResults();
         r.setResults(d);
-        Bird b = Packager.pack(r);
-        Bird control = new Bird();
+        Package p = Packager.pack(r, Package.TYPE.BIRD);
+        Package control = new Package();
         control.setName("American Crow");
-        assertEquals(b.getName(), control.getName());
+        assertEquals(p.getName(), control.getName());
     }
 
     @Test
@@ -29,8 +29,8 @@ public class BPTest {
         d.put("name", "American Crow");
         BirdInfoResults r = new BirdInfoResults();
         r.setResults(d);
-        Bird b = Packager.pack(r);
-        assertNotNull(b);
+        Package p = Packager.pack(r, Package.TYPE.BIRD);
+        assertNotNull(p);
     }
 
     @Test
@@ -41,8 +41,8 @@ public class BPTest {
         d.put("size", "about the size of my grade in this class LUL");
         BirdInfoResults r = new BirdInfoResults();
         r.setResults(d);
-        Bird b = Packager.pack(r);
-        Bird control = new Bird();
+        Package b = Packager.pack(r, Package.TYPE.BIRD);
+        Package control = new Package();
         control.setName("American Crow");
         control.setHabitat((String) d.get("habitat"));
         control.setSize((String) d.get("size"));

@@ -1,21 +1,27 @@
 package com.e.birdbook;
 
-public class Bird {
+import java.util.Dictionary;
+
+public class Package {
+    enum TYPE{INVALID, BIRD}
     private String name, description, finding, habitat, diet, nest, behavior, conservation, size, shape;
+    private TYPE type;
 
-    public Bird(){}
+    public Package(){type = TYPE.INVALID;}
 
-    public Bird(String name, String description, String finding, String habitat, String diet, String nest, String behavior, String conservation, String size, String shape){
-        this.name = name;
-        this.description = description;
-        this.finding = finding;
-        this.habitat = habitat;
-        this.diet = diet;
-        this.nest = nest;
-        this.behavior = behavior;
-        this.conservation = conservation;
-        this.size = size;
-        this.shape = shape;
+    public Package(BirdInfoResults bir, TYPE t){
+        Dictionary d = bir.getResults();
+        setName((String) d.get("name"));
+        setDescripton((String) d.get("description"));
+        setFinding((String) d.get("finding"));
+        setHabitat((String) d.get("habitat"));
+        setDiet((String) d.get("diet"));
+        setNest((String) d.get("nest"));
+        setBehavior((String) d.get("behavior"));
+        setConservation((String) d.get("conservation"));
+        setShape((String) d.get("shape"));
+        setSize((String) d.get("size"));
+        this.type = t;
     }
 
     public void setName(String name) {
