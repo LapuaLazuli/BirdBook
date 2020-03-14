@@ -103,4 +103,8 @@ public class Package {
     public String getShape() {
         return shape;
     }
+
+    public TYPE getType(){
+        return type;
+    }
 }
