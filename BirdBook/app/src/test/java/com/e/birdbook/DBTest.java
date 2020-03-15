@@ -58,5 +58,20 @@ public class DBTest {
 
     }
 
+    @Test
+    public void dbDicNotNull() throws Exception {
+        //checks if the dictionary of <name, BirdInfoResults> is not NULL
+        List<String> reqFields = new ArrayList<>();
+        reqFields.add("description");
+        reqFields.add("conservation");
+        reqFields.add("behavior");
+        Request req = new BirdInfoRequest(reqFields, "name", "all");
+        BirdInfoResults res = (BirdInfoResults) access(req);
+        Dictionary test = res.getResults();
+        assertNotNull(test);
+        //check if the BirdInfoResults in dictionary test isn't NULL
+        assertNotNull(test.get("American crow"));
+    }
+
 
 }

@@ -23,13 +23,13 @@ public class birdInfoActivity extends AppCompatActivity
         String birdName = getIntent().getStringExtra("Bird");
 
         //call request packager to get request
-        BirdInfoRequest req = BirdInfoRequest.createInfoRequest("name", birdName);
+        BirdInfoRequest req = BirdInfoRequestPackager.createInfoRequest("name", birdName);
 
         //send request to requester
         Results res = Requester.request(req);
 
         //apply UI friendly info
-        loadUIfriendlyInfo(res);
+        loadUIfriendlyInfo((Hashtable<String, String>) res.getResults());
     }
 
     public void loadUIfriendlyInfo(Hashtable<String, String> UIInfo)
