@@ -5,11 +5,21 @@ public class Requester
     public static UIFriendlyInfo Request(Request request)
     {
         UIFriendlyInfo UIinfo = null;
-        Results results = DBAcessor.access(request);
+        Results results = null;
+
+        try
+        {
+            results = DBAcessor.access(request);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
 
         if(results != null)
         {
-            UIinfo = packager.pack(results);
+            Package bird = Packager.pack(results, Package.TYPE.BIRD);
+            UIinfo = birdInfoContentPresenter.makeUIFriendly(bird);
         }
         else
             System.out.println("Error: Results null");

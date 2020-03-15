@@ -2,8 +2,19 @@ package com.e.birdbook;
 
 public class Packager {
 
-    public static Package pack(BirdInfoResults bir, Package.TYPE t){
+    public static Package pack(Results bir, Package.TYPE t){
 
-        return new Package(bir, t);
+        switch(t)
+        {
+            case BIRD:
+                return new Package(bir, t);
+                break;
+
+            case INVALID:
+            default:
+                System.out.println("ERROR: unrecognized type");
+                break;
+        }
+
     }
 }

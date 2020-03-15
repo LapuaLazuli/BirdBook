@@ -48,14 +48,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-<<<<<<< HEAD
                 android:ellipsize="none"
                 android:maxLines="8"
                 android:minLines="2"
-=======
-                android:ellipsize="end"
-                android:maxLines="4"
->>>>>>> Created bird info page activity
                 android:padding="2dp"
                 android:text="Description Placeholder"
                 android:layout_weight="1"
@@ -76,13 +71,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-<<<<<<< HEAD
                 android:maxLines="8"
                 android:minLines="2"
                 android:layout_weight="1"
                 android:scrollHorizontally="false"
-=======
->>>>>>> Created bird info page activity
                 android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Size Placeholder"
@@ -103,13 +95,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:ellipsize="end"
-<<<<<<< HEAD
                 android:maxLines="8"
                 android:minLines="2"
                 android:layout_weight="1"
                 android:scrollHorizontally="false"
-=======
->>>>>>> Created bird info page activity
                 android:padding="2dp"
                 android:text="Shape Placeholder"
                 android:textSize="16sp" />
@@ -128,13 +117,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-<<<<<<< HEAD
                 android:maxLines="8"
                 android:minLines="2"
                 android:layout_weight="1"
                 android:scrollHorizontally="false"
-=======
->>>>>>> Created bird info page activity
                 android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Finding Placeholder"
@@ -154,13 +140,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-<<<<<<< HEAD
                 android:maxLines="8"
                 android:minLines="2"
                 android:layout_weight="1"
                 android:scrollHorizontally="false"
-=======
->>>>>>> Created bird info page activity
                 android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Habitat Placeholder"
@@ -180,13 +163,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-<<<<<<< HEAD
                 android:maxLines="8"
                 android:minLines="2"
                 android:layout_weight="1"
                 android:scrollHorizontally="false"
-=======
->>>>>>> Created bird info page activity
                 android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Diet Placeholder"
@@ -206,13 +186,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-<<<<<<< HEAD
                 android:maxLines="8"
                 android:minLines="2"
                 android:layout_weight="1"
                 android:scrollHorizontally="false"
-=======
->>>>>>> Created bird info page activity
                 android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Nest Placeholder"
@@ -232,13 +209,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-<<<<<<< HEAD
                 android:maxLines="8"
                 android:minLines="2"
                 android:layout_weight="1"
                 android:scrollHorizontally="false"
-=======
->>>>>>> Created bird info page activity
                 android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Behavior Placeholder"
@@ -258,13 +232,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-<<<<<<< HEAD
                 android:maxLines="8"
                 android:minLines="2"
                 android:layout_weight="1"
                 android:scrollHorizontally="false"
-=======
->>>>>>> Created bird info page activity
                 android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Conservation Placeholder"

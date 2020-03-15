@@ -9,7 +9,7 @@ public class Package {
 
     public Package(){type = TYPE.INVALID;}
 
-    public Package(BirdInfoResults bir, TYPE t){
+    public Package(Results bir, TYPE t){
         Dictionary d = bir.getResults();
         setName((String) d.get("name"));
         setDescripton((String) d.get("description"));
