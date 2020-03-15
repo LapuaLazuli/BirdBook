@@ -23,7 +23,7 @@ public class DBAcessor {
 
         boolean found = false;
 
-        if(v.equals("all")){
+        if(f.equals("all")){
             //used for grabbing data from all birds
             while (rs.next()){
                 BirdInfoResults bir = new BirdInfoResults(); //creates a new BirdInfoResults to go into dictionary
