@@ -10,6 +10,7 @@ public class birdInfoContentPresenter
         Dictionary<String, String> info = new Hashtable<String, String>();
 
         info.put("infoName", bird.getName());
+        //info.put("infoImage", bird.getImage());
         info.put("infoDescription", bird.getDescription());
         info.put("infoSize", bird.getSize());
         info.put("infoShape", bird.getShape());

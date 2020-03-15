@@ -4,10 +4,11 @@ public class Packager {
 
     public static Package pack(Results bir, Package.TYPE t){
 
+        Package resultPackage = null;
         switch(t)
         {
             case BIRD:
-                return new Package(bir, t);
+                resultPackage = new Package(bir, t);
                 break;
 
             case INVALID:
@@ -16,5 +17,6 @@ public class Packager {
                 break;
         }
 
+        return resultPackage;
     }
 }
