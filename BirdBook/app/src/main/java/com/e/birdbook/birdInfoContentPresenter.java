@@ -5,7 +5,7 @@ import java.util.Hashtable;
 
 public class birdInfoContentPresenter
 {
-    public static UIFriendlyInfo makeUIFriendly(Package bird)
+    public static UIFriendlyInfo makeUIFriendly(BirdPackage bird)
     {
         Dictionary<String, String> info = new Hashtable<String, String>();
 

@@ -2,14 +2,15 @@ package com.e.birdbook;
 
 import java.util.Dictionary;
 
-public class Package {
-    enum TYPE{INVALID, BIRD}
+public class BirdPackage
+{
+
     private String name, description, finding, habitat, diet, nest, behavior, conservation, size, shape;
-    private TYPE type;
+    private Request.TYPE type;
 
-    public Package(){type = TYPE.INVALID;}
+    public BirdPackage(){type = Request.TYPE.INVALID;}
 
-    public Package(Results bir, TYPE t){
+    public BirdPackage(Results bir){
         Dictionary d = bir.getResults();
         setName((String) d.get("name"));
         setDescripton((String) d.get("description"));
@@ -21,7 +22,7 @@ public class Package {
         setConservation((String) d.get("conservation"));
         setShape((String) d.get("shape"));
         setSize((String) d.get("size"));
-        this.type = t;
+        this.type = Request.TYPE.BIRD;
     }
 
     public void setName(String name) {
@@ -104,7 +105,7 @@ public class Package {
         return shape;
     }
 
-    public TYPE getType(){
+    public Request.TYPE getType(){
         return type;
     }
 }

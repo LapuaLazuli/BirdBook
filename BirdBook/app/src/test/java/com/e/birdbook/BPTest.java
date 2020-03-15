@@ -2,10 +2,8 @@ package com.e.birdbook;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
-import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
@@ -17,8 +15,8 @@ public class BPTest {
         d.put("name", "American Crow");
         BirdInfoResults r = new BirdInfoResults();
         r.setResults(d);
-        Package p = Packager.pack(r, Package.TYPE.BIRD);
-        Package control = new Package();
+        BirdPackage p = Packager.pack(r, BirdPackage.TYPE.BIRD);
+        BirdPackage control = new BirdPackage();
         control.setName("American Crow");
         assertEquals(p.getName(), control.getName());
     }
@@ -29,7 +27,7 @@ public class BPTest {
         d.put("name", "American Crow");
         BirdInfoResults r = new BirdInfoResults();
         r.setResults(d);
-        Package p = Packager.pack(r, Package.TYPE.BIRD);
+        BirdPackage p = Packager.pack(r, BirdPackage.TYPE.BIRD);
         assertNotNull(p);
     }
 
@@ -41,8 +39,8 @@ public class BPTest {
         d.put("size", "about the size of my grade in this class LUL");
         BirdInfoResults r = new BirdInfoResults();
         r.setResults(d);
-        Package b = Packager.pack(r, Package.TYPE.BIRD);
-        Package control = new Package();
+        BirdPackage b = Packager.pack(r, BirdPackage.TYPE.BIRD);
+        BirdPackage control = new BirdPackage();
         control.setName("American Crow");
         control.setHabitat((String) d.get("habitat"));
         control.setSize((String) d.get("size"));

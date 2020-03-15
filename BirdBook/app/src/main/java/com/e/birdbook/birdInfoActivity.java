@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import org.w3c.dom.Text;
 
+import java.util.Dictionary;
 import java.util.Enumeration;
 import java.util.Hashtable;
 
@@ -26,18 +27,20 @@ public class birdInfoActivity extends AppCompatActivity
         BirdInfoRequest req = BirdInfoRequestPackager.createInfoRequest("name", birdName);
 
         //send request to requester
-        Results res = Requester.request(req);
+        UIFriendlyInfo res = Requester.request(req);
 
         //apply UI friendly info
-        loadUIfriendlyInfo((Hashtable<String, String>) res.getResults());
+        loadUIfriendlyInfo(res);
     }
 
-    public void loadUIfriendlyInfo(Hashtable<String, String> UIInfo)
+    public void loadUIfriendlyInfo(UIFriendlyInfo UIInfo)
     {
         //loop through UI elements
         //update each element with corresponding data pieces
 
-        Enumeration<String> keysEnu = UIInfo.keys();
+        //get 0 since there is only 1 bird entry to use
+        Dictionary<String, String> info = UIInfo.getInfo().get(0);
+        Enumeration<String> keysEnu = info.keys();
         View currentUIElement;
         String currentKey;
         int resourceID;
@@ -54,12 +57,12 @@ public class birdInfoActivity extends AppCompatActivity
                 {
                     case "TextView":
                         TextView currentTextView = (TextView)currentUIElement;
-                        currentTextView.setText(UIInfo.get(currentKey));
+                        currentTextView.setText(info.get(currentKey));
                         break;
 
                     case "ImageView":
                         ImageView currentImageView = (ImageView)currentUIElement;
-                        int imageId = getResources().getIdentifier(UIInfo.get(currentKey), null, getPackageName());
+                        int imageId = getResources().getIdentifier(info.get(currentKey), null, getPackageName());
                         currentImageView.setImageResource(imageId);
                         break;
                 }

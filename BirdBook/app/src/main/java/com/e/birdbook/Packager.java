@@ -2,13 +2,17 @@ package com.e.birdbook;
 
 public class Packager {
 
-    public static Package pack(Results bir, Package.TYPE t){
+    public static BirdPackage pack(Results bir){
 
-        Package resultPackage = null;
-        switch(t)
+        BirdPackage resultPackage = null;
+        switch(bir.getType())
         {
             case BIRD:
-                resultPackage = new Package(bir, t);
+                resultPackage = new BirdPackage(bir);
+                break;
+
+            case BIRDLIST:
+                resultPackage = new BirdListPackage(bir);
                 break;
 
             case INVALID:

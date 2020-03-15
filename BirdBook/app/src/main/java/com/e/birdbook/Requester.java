@@ -3,7 +3,7 @@ package com.e.birdbook;
 public class Requester
 {
 
-    public static UIFriendlyInfo Request(Request request)
+    public static UIFriendlyInfo request(Request request)
     {
         UIFriendlyInfo UIinfo = null;
         Results results = null;
@@ -19,8 +19,24 @@ public class Requester
 
         if(results != null)
         {
-            Package bird = Packager.pack(results, Package.TYPE.BIRD);
-            UIinfo = birdInfoContentPresenter.makeUIFriendly(bird);
+            switch(results.getType())
+            {
+                case BIRD:
+                    BirdPackage bird = Packager.pack(results);
+                    UIinfo = birdInfoContentPresenter.makeUIFriendly(bird);
+                    break;
+
+                case BIRDLIST:
+                    BirdListPackage bird = Packager.pack(results);
+                    UIinfo = birdInfoContentPresenter.makeUIFriendly(bird);
+                    break;
+
+                case INVALID:
+                default:
+                    System.out.println("ERROR: invalid type in requester");
+                    break;
+            }
+
         }
         else
             System.out.println("Error: Results null");
