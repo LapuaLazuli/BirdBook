@@ -10,6 +10,7 @@ public class BirdInfoRequest implements Request
     private List<String> requestFields;
     private String searchField;
     private String searchValue;
+    private Request.TYPE type;
 
     public BirdInfoRequest()
     {
@@ -56,5 +57,17 @@ public class BirdInfoRequest implements Request
     public void setSearchValue(String value)
     {
         this.searchValue = value;
+    }
+
+    @Override
+    public Request.TYPE getType()
+    {
+        return this.type;
+    }
+
+    @Override
+    public void setType(Request.TYPE type)
+    {
+        this.type = type;
     }
 }
