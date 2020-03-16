@@ -25,7 +25,7 @@ public class UIFriendlyInfo
         this.info = info;
     }
 
-    public List<Dictionary<String, String>> getInfo()
+    public Dictionary<String, String> getInfo()
     {
         return this.info;
     }

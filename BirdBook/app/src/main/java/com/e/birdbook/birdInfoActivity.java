@@ -36,7 +36,7 @@ public class birdInfoActivity extends AppCompatActivity
         //update each element with corresponding data pieces
 
         //get 0 since there is only 1 bird entry to use
-        Dictionary<String, String> info = UIInfo.getInfo().get(0);
+        Dictionary<String, String> info = UIInfo.getInfo();
         Enumeration<String> keysEnu = info.keys();
         View currentUIElement;
         String currentKey;

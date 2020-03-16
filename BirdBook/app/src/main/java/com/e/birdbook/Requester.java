@@ -19,16 +19,15 @@ public class Requester
 
         if(results != null)
         {
+            Package bird = Packager.pack(results);
             switch(results.getType())
             {
                 case BIRD:
-                    BirdPackage bird = Packager.pack(results);
-                    UIinfo = birdInfoContentPresenter.makeUIFriendly(bird);
+                    UIinfo = BirdInfoContentPresenter.makeUIFriendly((BirdPackage) bird);
                     break;
 
                 case BIRDLIST:
-                    BirdListPackage bird = Packager.pack(results);
-                    UIinfo = birdInfoContentPresenter.makeUIFriendly(bird);
+                    UIinfo = BirdListContentPresenter.makeUIFriendly((BirdListPackage) bird);
                     break;
 
                 case INVALID:

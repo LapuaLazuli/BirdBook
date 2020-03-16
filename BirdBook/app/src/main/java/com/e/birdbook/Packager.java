@@ -2,9 +2,9 @@ package com.e.birdbook;
 
 public class Packager {
 
-    public static BirdPackage pack(Results bir){
+    public static Package pack(Results bir){
 
-        BirdPackage resultPackage = null;
+        Package resultPackage = null;
         switch(bir.getType())
         {
             case BIRD:

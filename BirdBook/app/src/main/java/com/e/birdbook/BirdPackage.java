@@ -2,7 +2,7 @@ package com.e.birdbook;
 
 import java.util.Dictionary;
 
-public class BirdPackage
+public class BirdPackage implements Package
 {
 
     private String name, description, finding, habitat, diet, nest, behavior, conservation, size, shape;

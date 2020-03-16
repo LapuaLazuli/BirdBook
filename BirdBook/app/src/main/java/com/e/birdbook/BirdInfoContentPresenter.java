@@ -3,7 +3,7 @@ package com.e.birdbook;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
-public class birdInfoContentPresenter
+public class BirdInfoContentPresenter
 {
     public static UIFriendlyInfo makeUIFriendly(BirdPackage bird)
     {
