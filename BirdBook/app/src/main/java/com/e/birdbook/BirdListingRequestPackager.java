@@ -15,7 +15,6 @@ public class BirdListingRequestPackager
         requestFields.add("Name");
         requestFields.add("Image");
 
-        BirdInfoRequest request = new BirdInfoRequest(requestFields, searchField, searchValue);
-        return request;
+        return new BirdInfoRequest(requestFields, searchField, searchValue, Request.TYPE.BIRDLIST);
     }
 }
