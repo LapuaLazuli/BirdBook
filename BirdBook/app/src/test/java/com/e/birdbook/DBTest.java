@@ -5,6 +5,7 @@ import org.junit.Assert.*;
 import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Dictionary;
+import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -65,10 +66,16 @@ public class DBTest {
         reqFields.add("description");
         reqFields.add("conservation");
         reqFields.add("behavior");
-        Request req = new BirdInfoRequest(reqFields, "name", "all");
-        BirdInfoResults res = (BirdInfoResults) access(req);
-        Dictionary test = res.getResults();
+        Request req = BirdListingRequestPackager.BirdListRequest();
+        Results res = access(req);
+        Dictionary<String, String> test = res.getResults();
         assertNotNull(test);
+
+        System.out.println(">>>PRINTING KEYS");
+        Enumeration<String> testEnum = test.keys();
+        while(testEnum.hasMoreElements())
+            System.out.println(">>>DEBUG: " + testEnum.nextElement());
+
         //check if the BirdInfoResults in dictionary test isn't NULL
         assertNotNull(test.get("American crow"));
     }

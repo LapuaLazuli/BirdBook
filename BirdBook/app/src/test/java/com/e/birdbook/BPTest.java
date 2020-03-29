@@ -13,9 +13,9 @@ public class BPTest {
     public void bpValueTest(){
         Dictionary d = new Hashtable();
         d.put("name", "American Crow");
-        BirdInfoResults r = new BirdInfoResults();
+        Results r = new BirdInfoResults();
         r.setResults(d);
-        BirdPackage p = Packager.pack(r, BirdPackage.TYPE.BIRD);
+        BirdPackage p = (BirdPackage) Packager.pack(r);
         BirdPackage control = new BirdPackage();
         control.setName("American Crow");
         assertEquals(p.getName(), control.getName());
@@ -27,7 +27,7 @@ public class BPTest {
         d.put("name", "American Crow");
         BirdInfoResults r = new BirdInfoResults();
         r.setResults(d);
-        BirdPackage p = Packager.pack(r, BirdPackage.TYPE.BIRD);
+        BirdPackage p = (BirdPackage) Packager.pack(r);
         assertNotNull(p);
     }
 
@@ -39,7 +39,7 @@ public class BPTest {
         d.put("size", "about the size of my grade in this class LUL");
         BirdInfoResults r = new BirdInfoResults();
         r.setResults(d);
-        BirdPackage b = Packager.pack(r, BirdPackage.TYPE.BIRD);
+        BirdPackage b = (BirdPackage)Packager.pack(r);
         BirdPackage control = new BirdPackage();
         control.setName("American Crow");
         control.setHabitat((String) d.get("habitat"));

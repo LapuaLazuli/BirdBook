@@ -23,8 +23,9 @@ public class DBAcessor {
 
         boolean found = false;
 
-        if(f.equals("all")){
+        if(query.getType() == Request.TYPE.BIRDLIST){
             //used for grabbing data from all birds
+            System.out.println("DEBUG: CORRECT SECTION");
             while (rs.next()){
                 BirdInfoResults bir = new BirdInfoResults(); //creates a new BirdInfoResults to go into dictionary
                 Dictionary d2 = new Hashtable(); //creates a dictionary to go in bir
@@ -40,6 +41,7 @@ public class DBAcessor {
             }
         }
         else {
+            System.out.println("DEBUG: INCORRECT SECTION");
             while (rs.next() && !found) {
                 if (v.equals(rs.getString(f))) { //checks if searchValue matches the value of corresponding searchField
                     d.put(f, v); //puts successful match into dictionary
