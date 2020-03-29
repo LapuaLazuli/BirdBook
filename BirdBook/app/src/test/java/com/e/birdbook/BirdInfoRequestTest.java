@@ -31,7 +31,7 @@ public class BirdInfoRequestTest
         List<String> fields = new ArrayList<String>();
         fields.add("name");
 
-        Request req = new BirdInfoRequest(fields, "name", "Crow");
+        Request req = new BirdInfoRequest(fields, "name", "Crow", Request.TYPE.BIRD);
 
         //check parameters
         assertEquals(fields, req.getRequestedFields());
@@ -48,7 +48,7 @@ public class BirdInfoRequestTest
         fields.add("color");
         fields.add("habitat");
 
-        Request req = new BirdInfoRequest(fields, "color", "red");
+        Request req = new BirdInfoRequest(fields, "color", "red", Request.TYPE.BIRD);
 
         //check parameters
         assertEquals(fields, req.getRequestedFields());
@@ -66,7 +66,7 @@ public class BirdInfoRequestTest
         fields.add("lifespan");
         fields.add("region");
 
-        Request req = new BirdInfoRequest(fields, "region", "Pacific West");
+        Request req = new BirdInfoRequest(fields, "region", "Pacific West", Request.TYPE.BIRD);
 
         fields.add("behavior");
 

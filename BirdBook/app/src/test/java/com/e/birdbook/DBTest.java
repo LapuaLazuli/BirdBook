@@ -20,7 +20,7 @@ public class DBTest {
         reqFields.add("habitat");
         reqFields.add("conservation");
         reqFields.add("behavior");
-        Request req = new BirdInfoRequest(reqFields, "name", "American Crow");
+        Request req = new BirdInfoRequest(reqFields, "name", "American Crow", Request.TYPE.BIRD);
         BirdInfoResults res = (BirdInfoResults) access(req);
         Dictionary<String, String> r = res.getResults();
         assertNotNull(res);
@@ -32,7 +32,7 @@ public class DBTest {
         reqFields.add("habitat");
         reqFields.add("conservation");
         reqFields.add("behavior");
-        Request req = new BirdInfoRequest(reqFields, "name", "American crow");
+        Request req = new BirdInfoRequest(reqFields, "name", "American crow", Request.TYPE.BIRD);
         BirdInfoResults res = (BirdInfoResults) access(req);
         Dictionary<String, String> r = res.getResults();
         assertEquals("American crow", r.get("name"));
@@ -44,7 +44,7 @@ public class DBTest {
         reqFields.add("description");
         reqFields.add("conservation");
         reqFields.add("behavior");
-        Request req = new BirdInfoRequest(reqFields, "name", "Barn owl");
+        Request req = new BirdInfoRequest(reqFields, "name", "Barn owl", Request.TYPE.BIRD);
         BirdInfoResults res = (BirdInfoResults) access(req);
         Dictionary<String, String> r = res.getResults();
         Dictionary d = new Hashtable();
