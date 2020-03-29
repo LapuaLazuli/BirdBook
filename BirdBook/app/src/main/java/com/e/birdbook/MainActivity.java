@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         birdList.add(new UI_List_Item(R.drawable.ic_android_black_24dp, "Test Name"));
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        //recyclerView.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         birdListActivity = new Bird_List_Activity(birdList);

@@ -10,9 +10,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.Enumeration;
 
 public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.ActivityViewHolder> {
     private ArrayList<UI_List_Item> birdList;
+
    public static class ActivityViewHolder extends RecyclerView.ViewHolder{
         public ImageView imageView;
         public TextView birdName;
@@ -25,7 +28,8 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
     }
 
     public Bird_List_Activity(ArrayList<UI_List_Item> birdList){
-        this.birdList = birdList;
+       getAllData();
+       this.birdList = birdList;
     }
 
     @NonNull
@@ -47,5 +51,17 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
     @Override
     public int getItemCount() {
         return birdList.size();
+    }
+
+    public void getAllData(){
+       BirdInfoRequest req = BirdListingRequestPackager.BirdListRequest();
+       UIFriendlyInfo res = Requester.request(req);
+       Dictionary<String, String> allBirds = res.getInfo();
+       Enumeration<String> keys = allBirds.keys();
+//       while (keys.hasMoreElements()){
+//           System.out.println(allBirds.get(keys));
+//           birdList.add(new UI_List_Item(0, allBirds.get(keys)));
+//       }
+
     }
 }

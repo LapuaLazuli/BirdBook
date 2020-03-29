@@ -6,7 +6,7 @@ import java.util.List;
 public class BirdListingRequestPackager
 {
 
-    public BirdListingRequestPackager()
+    public static BirdInfoRequest BirdListRequest()
     {
         List<String> requestFields = new ArrayList<String>();
         String searchField = "all"; //not an actual field -- this is used by the database accessor to grab all entries.
@@ -16,5 +16,6 @@ public class BirdListingRequestPackager
         requestFields.add("Image");
 
         BirdInfoRequest request = new BirdInfoRequest(requestFields, searchField, searchValue);
+        return request;
     }
 }
