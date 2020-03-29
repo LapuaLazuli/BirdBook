@@ -7,9 +7,13 @@ import java.util.List;
 public class DBAcessor {
     public static Results access(Request query) throws Exception {
         //connects code to bird.db
+        System.out.println("DEBUG: CHECKPOINT 0");
+
         Class.forName("org.sqlite.JDBC");
         Connection conn = DriverManager.getConnection("jdbc:sqlite:bird.db");
         Statement stat = conn.createStatement();
+
+        System.out.println("DEBUG: CHECKPOINT 1");
 
         //initialize return class, returning dictionary, and search values
         Results ret = new BirdInfoResults();
@@ -17,6 +21,8 @@ public class DBAcessor {
         Dictionary d = new Hashtable();
         String v = query.getSearchValue();
         String f = query.getSearchField();
+
+        System.out.println("DEBUG: CHECKPOINT 2");
 
         //begins parsing database
         ResultSet rs = stat.executeQuery("select * from birds;");
