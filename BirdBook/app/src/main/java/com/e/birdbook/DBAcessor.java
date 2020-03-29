@@ -3,6 +3,7 @@ import java.sql.*;
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Properties;
 
 public class DBAcessor {
     public static Results access(Request query) throws Exception {
@@ -10,7 +11,9 @@ public class DBAcessor {
         System.out.println("DEBUG: CHECKPOINT 0");
 
         Class.forName("org.sqlite.JDBC");
-        Connection conn = DriverManager.getConnection("jdbc:sqlite:bird.db");
+        Properties config = new Properties();
+        config.setProperty("open_mode", "1");
+        Connection conn = DriverManager.getConnection("jdbc:sqlite:bird.db", config);
         Statement stat = conn.createStatement();
 
         System.out.println("DEBUG: CHECKPOINT 1");
