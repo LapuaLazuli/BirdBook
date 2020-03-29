@@ -10,7 +10,7 @@ public class DBAcessor {
         //connects code to bird.db
         System.out.println("DEBUG: CHECKPOINT 0");
 
-        Class.forName("org.sqlite.JDBC");
+        //Class.forName("org.sqlite.JDBC");
         Properties config = new Properties();
         config.setProperty("open_mode", "1");
         Connection conn = DriverManager.getConnection("jdbc:sqlite:bird.db", config);
