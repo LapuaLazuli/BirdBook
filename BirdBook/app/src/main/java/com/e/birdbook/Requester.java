@@ -1,19 +1,26 @@
 package com.e.birdbook;
 
+import android.content.Context;
+
 public class Requester
 {
 
-    public static UIFriendlyInfo request(Request request)
+    public static UIFriendlyInfo request(Request request, Context context)
     {
         UIFriendlyInfo UIinfo = null;
         Results results = null;
 
+        System.out.println("DEBUG: Request checkpoint 1");
+
         try
         {
-            results = DBAcessor.access(request);
+            System.out.println("DEBUG: Request checkpoint 2");
+            results = DBAcessor.access(request, context);
+            System.out.println("DEBUG: Request checkpoint 3");
         }
         catch (Exception e)
         {
+            System.out.println("DEBUG: Request Catching exception");
             e.printStackTrace();
         }
 

@@ -18,6 +18,7 @@ public class DBAcessor {
         System.out.println("db Path: " + c.getDatabasePath("bird.db").getAbsolutePath());
         Properties config = new Properties();
         config.setProperty("open_mode", "1");
+
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + c.getDatabasePath("bird.db").getAbsolutePath(), config);
         Statement stat = conn.createStatement();
 

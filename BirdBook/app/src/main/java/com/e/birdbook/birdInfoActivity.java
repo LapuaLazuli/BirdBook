@@ -24,7 +24,7 @@ public class birdInfoActivity extends AppCompatActivity
         BirdInfoRequest req = BirdInfoRequestPackager.createInfoRequest("name", birdName);
 
         //send request to requester
-        UIFriendlyInfo res = Requester.request(req);
+        UIFriendlyInfo res = Requester.request(req, this);
 
         //apply UI friendly info
         loadUIfriendlyInfo(res);

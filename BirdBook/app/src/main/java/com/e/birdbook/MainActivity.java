@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -12,6 +13,13 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter birdListActivity;
     private RecyclerView.LayoutManager layoutManager;
+    private Context context;
+
+    public Context getContext()
+    {
+        return context;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +32,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
-        birdListActivity = new Bird_List_Activity(birdList);
+        birdListActivity = new Bird_List_Activity(birdList, this);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(birdListActivity);
+
+        context = this;
     }
 
 
