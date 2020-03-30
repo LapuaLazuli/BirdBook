@@ -22,6 +22,6 @@ public class BirdInfoRequestPackager
         requestFields.add("conservation");
 
 
-        return new BirdInfoRequest(requestFields, field, value);
+        return new BirdInfoRequest(requestFields, field, value, Request.TYPE.BIRD);
     }
 }

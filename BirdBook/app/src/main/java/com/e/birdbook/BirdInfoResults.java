@@ -10,15 +10,18 @@ public class BirdInfoResults implements Results
 {
 
     private Dictionary<String, String> results;
+    private Results.TYPE type;
 
     public BirdInfoResults()
     {
         this.results = new Hashtable<String, String>();
+        this.type = Results.TYPE.BIRD;
     }
 
     public BirdInfoResults(Dictionary<String, String> results)
     {
         this.results = results;
+        this.type = Results.TYPE.BIRD;
     }
 
     @Override
@@ -31,5 +34,17 @@ public class BirdInfoResults implements Results
     public Dictionary<String, String> getResults()
     {
         return this.results;
+    }
+
+    @Override
+    public TYPE getType()
+    {
+        return this.type;
+    }
+
+    @Override
+    public void setType(TYPE type)
+    {
+        this.type = type;
     }
 }

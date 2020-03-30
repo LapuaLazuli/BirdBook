@@ -4,6 +4,8 @@ import java.util.List;
 
 public interface Request {
 
+    enum TYPE{INVALID, BIRD, BIRDLIST}
+
     //returns a List of Strings which contain the names of the fields desired from the request
     public List<String> getRequestedFields();
 
@@ -15,4 +17,7 @@ public interface Request {
     public void setSearchField(String field);
     public String getSearchValue();
     public void setSearchValue(String value);
+
+    public TYPE getType();
+    public void setType(TYPE type);
 }

@@ -10,19 +10,22 @@ public class BirdInfoRequest implements Request
     private List<String> requestFields;
     private String searchField;
     private String searchValue;
+    private Request.TYPE type;
 
     public BirdInfoRequest()
     {
         this.requestFields = new ArrayList<String>();
         this.searchValue = null;
         this.searchField = null;
+        this.type = TYPE.INVALID;
     }
 
-    public BirdInfoRequest(List<String> requestFields, String searchField, String searchValue)
+    public BirdInfoRequest(List<String> requestFields, String searchField, String searchValue, TYPE type)
     {
         this.requestFields = requestFields;
         this.searchField = searchField;
         this.searchValue = searchValue;
+        this.type = type;
     }
 
     @Override
@@ -56,5 +59,17 @@ public class BirdInfoRequest implements Request
     public void setSearchValue(String value)
     {
         this.searchValue = value;
+    }
+
+    @Override
+    public Request.TYPE getType()
+    {
+        return this.type;
+    }
+
+    @Override
+    public void setType(Request.TYPE type)
+    {
+        this.type = type;
     }
 }

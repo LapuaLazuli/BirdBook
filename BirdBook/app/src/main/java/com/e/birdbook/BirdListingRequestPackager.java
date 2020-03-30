@@ -5,15 +5,16 @@ import java.util.List;
 
 public class BirdListingRequestPackager
 {
-    public static BirdInfoRequest createListingRequest()
+    public static BirdInfoRequest BirdListRequest()
     {
         List<String> requestFields = new ArrayList<String>();
         String searchField = "all"; //not an actual field -- this is used by the database accessor to grab all entries.
         String searchValue = "";
 
-        requestFields.add("Name");
-        requestFields.add("Image");
+        requestFields.add("name");
+        //requestFields.add("image");
 
-        return new BirdInfoRequest(requestFields, searchField, searchValue);
+        return new BirdInfoRequest(requestFields, searchField, searchValue, Request.TYPE.BIRDLIST);
+
     }
 }
