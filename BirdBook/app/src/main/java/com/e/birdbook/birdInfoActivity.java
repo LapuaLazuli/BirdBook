@@ -1,9 +1,12 @@
 
 package com.e.birdbook;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.w3c.dom.Text;
@@ -14,6 +17,7 @@ import java.util.Hashtable;
 
 public class birdInfoActivity extends AppCompatActivity
 {
+    @RequiresApi(api = Build.VERSION_CODES.O_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +28,7 @@ public class birdInfoActivity extends AppCompatActivity
         if(birdName != null)
         {
             //call request packager to get request
-            BirdInfoRequest req = BirdInfoRequestPackager.createInfoRequest("name", birdName.toLowerCase());
+            BirdInfoRequest req = BirdInfoRequestPackager.createInfoRequest("name", birdName);
 
             //send request to requester
             UIFriendlyInfo res = Requester.request(req, this);
