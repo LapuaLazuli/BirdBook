@@ -60,9 +60,8 @@ public class DBAcessor {
                 }
                 bir.setResults(d2); //places dictionary into inner BirdInfoResults
                 d.put(cs.getString(0), bir); //places into primary Dictionary with format <birdname, BirdInfoResults>
-
-                ret.setType(Results.TYPE.BIRDLIST);
             }
+            ret.setType(Results.TYPE.BIRDLIST);
         }
         else {
             System.out.println("DEBUG: INCORRECT SECTION");
