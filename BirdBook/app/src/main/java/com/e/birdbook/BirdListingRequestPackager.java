@@ -12,8 +12,8 @@ public class BirdListingRequestPackager
         String searchField = "all"; //not an actual field -- this is used by the database accessor to grab all entries.
         String searchValue = "";
 
-        requestFields.add("Name");
-        //requestFields.add("Image");
+        requestFields.add("name");
+        //requestFields.add("image");
 
         return new BirdInfoRequest(requestFields, searchField, searchValue, Request.TYPE.BIRDLIST);
     }

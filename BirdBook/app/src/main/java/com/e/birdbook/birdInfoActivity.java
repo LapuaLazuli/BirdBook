@@ -20,14 +20,19 @@ public class birdInfoActivity extends AppCompatActivity
         setContentView(R.layout.bird_info_page);
         //get info about what page this is
         String birdName = getIntent().getStringExtra("Bird");
-        //call request packager to get request
-        BirdInfoRequest req = BirdInfoRequestPackager.createInfoRequest("name", birdName);
 
-        //send request to requester
-        UIFriendlyInfo res = Requester.request(req);
+        if(birdName != null)
+        {
+            //call request packager to get request
+            BirdInfoRequest req = BirdInfoRequestPackager.createInfoRequest("name", birdName.toLowerCase());
 
-        //apply UI friendly info
-        loadUIfriendlyInfo(res);
+            //send request to requester
+            UIFriendlyInfo res = Requester.request(req, this);
+
+            //apply UI friendly info
+            loadUIfriendlyInfo(res);
+        }
+
     }
 
     public void loadUIfriendlyInfo(UIFriendlyInfo UIInfo)

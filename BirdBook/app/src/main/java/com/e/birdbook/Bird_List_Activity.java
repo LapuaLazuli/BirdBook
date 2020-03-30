@@ -3,6 +3,7 @@ package com.e.birdbook;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Parcelable;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +20,9 @@ import java.util.Enumeration;
 
 public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.ActivityViewHolder> {
     private ArrayList<UI_List_Item> birdList;
-    private Context mContext;
+    private Context context;
+
+
 
    public static class ActivityViewHolder extends RecyclerView.ViewHolder{
         public ImageView imageView;
@@ -34,8 +37,10 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
         }
     }
 
-    public Bird_List_Activity(Context context,  ArrayList<UI_List_Item> birdList){
-        this.mContext = context;
+
+    public Bird_List_Activity(ArrayList<UI_List_Item> birdList, Context context){
+       this.context = context;
+
        getAllData();
        this.birdList = birdList;
     }
@@ -73,8 +78,8 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
 
 
     public void getAllData(){
-       BirdInfoRequest req = BirdListingRequestPackager.BirdListRequest();
-       UIFriendlyInfo res = Requester.request(req);
+       Request req = BirdListingRequestPackager.BirdListRequest();
+       UIFriendlyInfo res = Requester.request(req, this.context);
        if(res != null)
        {
            Dictionary<String, String> allBirds = res.getInfo();
