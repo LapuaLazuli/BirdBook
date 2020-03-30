@@ -1,7 +1,5 @@
 package com.e.birdbook;
-import android.app.Activity;
 import android.content.Context;
-import android.content.ContextWrapper;
 
 import java.sql.*;
 import java.util.Dictionary;
@@ -15,11 +13,11 @@ public class DBAcessor {
         System.out.println("DEBUG: CHECKPOINT 0");
 
         Class.forName("org.sqlite.JDBC");
-        System.out.println("db Path: " + c.getDatabasePath("bird.db").getAbsolutePath());
+        System.out.println("db Path: " + c.getDatabasePath("databases/bird.db").getAbsolutePath());
         Properties config = new Properties();
         config.setProperty("open_mode", "1");
 
-        Connection conn = DriverManager.getConnection("jdbc:sqlite:" + c.getDatabasePath("bird.db").getAbsolutePath(), config);
+        Connection conn = DriverManager.getConnection("jdbc:sqlite:" + c.getDatabasePath("databases/bird.db").getAbsolutePath(), config);
         Statement stat = conn.createStatement();
 
         System.out.println("DEBUG: CHECKPOINT 1");
