@@ -87,10 +87,10 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
        if(res != null)
        {
            Dictionary<String, String> allBirds = res.getInfo();
-           Enumeration<String> keys = allBirds.keys();
-       while (keys.hasMoreElements()){
-           System.out.println(allBirds.get(keys));
-           birdList.add(new UI_List_Item(0, allBirds.get(keys)));
+           Enumeration<String> elements = allBirds.elements();
+       while (elements.hasMoreElements()){
+           System.out.println(allBirds.get(elements));
+           birdList.add(new UI_List_Item(0, elements.nextElement()));
        }
        }
        else
