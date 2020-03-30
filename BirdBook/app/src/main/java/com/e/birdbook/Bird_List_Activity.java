@@ -65,7 +65,7 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, birdInfoActivity.class);
-                intent.putExtra("Bird", (Parcelable) birdList.get(position));
+                intent.putExtra("Bird", birdList.get(position).getBirdName());
                 mContext.startActivity(intent);
             }
         });
