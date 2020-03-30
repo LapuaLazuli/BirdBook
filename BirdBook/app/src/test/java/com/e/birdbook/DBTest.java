@@ -21,7 +21,7 @@ public class DBTest {
         reqFields.add("conservation");
         reqFields.add("behavior");
         Request req = new BirdInfoRequest(reqFields, "name", "American Crow", Request.TYPE.BIRD);
-        BirdInfoResults res = (BirdInfoResults) access(req, );
+        BirdInfoResults res = (BirdInfoResults) access(req);
         Dictionary<String, String> r = res.getResults();
         assertNotNull(res);
     }
