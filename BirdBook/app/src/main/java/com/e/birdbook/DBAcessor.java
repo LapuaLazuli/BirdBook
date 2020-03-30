@@ -1,4 +1,8 @@
 package com.e.birdbook;
+import android.app.Activity;
+import android.content.Context;
+import android.content.ContextWrapper;
+
 import java.sql.*;
 import java.util.Dictionary;
 import java.util.Hashtable;
@@ -6,14 +10,15 @@ import java.util.List;
 import java.util.Properties;
 
 public class DBAcessor {
-    public static Results access(Request query) throws Exception {
+    public static Results access(Request query, Context c) throws Exception {
         //connects code to bird.db
         System.out.println("DEBUG: CHECKPOINT 0");
 
-        //Class.forName("org.sqlite.JDBC");
+        Class.forName("org.sqlite.JDBC");
+        System.out.println("db Path: " + c.getDatabasePath("bird.db").getAbsolutePath());
         Properties config = new Properties();
         config.setProperty("open_mode", "1");
-        Connection conn = DriverManager.getConnection("jdbc:sqlite:bird.db", config);
+        Connection conn = DriverManager.getConnection("jdbc:sqlite:" + c.getDatabasePath("bird.db").getAbsolutePath(), config);
         Statement stat = conn.createStatement();
 
         System.out.println("DEBUG: CHECKPOINT 1");
@@ -70,4 +75,5 @@ public class DBAcessor {
         //returns BirdInfoResults class
         return ret;
     }
+
 }
