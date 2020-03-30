@@ -27,7 +27,6 @@ public class birdInfoActivity extends AppCompatActivity
 
         if(birdName != null)
         {
-            birdName = "House Finch";
             //call request packager to get request
             BirdInfoRequest req = BirdInfoRequestPackager.createInfoRequest("name", birdName);
 
