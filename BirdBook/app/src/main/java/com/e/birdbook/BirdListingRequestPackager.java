@@ -5,7 +5,6 @@ import java.util.List;
 
 public class BirdListingRequestPackager
 {
-
     public static BirdInfoRequest BirdListRequest()
     {
         List<String> requestFields = new ArrayList<String>();
@@ -16,5 +15,6 @@ public class BirdListingRequestPackager
         //requestFields.add("image");
 
         return new BirdInfoRequest(requestFields, searchField, searchValue, Request.TYPE.BIRDLIST);
+
     }
 }
