@@ -43,9 +43,9 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
     @RequiresApi(api = Build.VERSION_CODES.O_MR1)
     public Bird_List_Activity(ArrayList<UI_List_Item> birdList, Context context){
        this.mContext = context;
-
+        this.birdList = birdList;
        getAllData();
-       this.birdList = birdList;
+
     }
 
     @NonNull
@@ -89,7 +89,7 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
            Dictionary<String, String> allBirds = res.getInfo();
            Enumeration<String> elements = allBirds.elements();
        while (elements.hasMoreElements()){
-           System.out.println(allBirds.get(elements));
+           //System.out.println(allBirds.get(elements));
            birdList.add(new UI_List_Item(0, elements.nextElement()));
        }
        }

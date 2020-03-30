@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
-    android:id="@id/ImageView"
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -13,12 +13,6 @@
         android:layout_margin="4dp"
         android:id="@+id/parent_layout">
 
-        <ImageView
-            android:id="@+id/ImageView"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:padding="2dp" />
-
         <TextView
             android:id="@+id/TextName"
             android:layout_width="wrap_content"
@@ -27,11 +21,10 @@
             android:layout_marginStart="35dp"
             android:layout_marginLeft="35dp"
             android:layout_marginTop="8dp"
-            android:layout_toEndOf="@+id/ImageView"
-            android:layout_toRightOf="@+id/ImageView"
+
             android:text="Mock Up"
             android:textColor="@android:color/black"
-            android:textSize="50dp"
+            android:textSize="25dp"
             android:textStyle="bold" />
 
     </RelativeLayout>
