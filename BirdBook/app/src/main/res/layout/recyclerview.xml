@@ -10,7 +10,8 @@
     <RelativeLayout
         android:layout_width="407dp"
         android:layout_height="90dp"
-        android:layout_margin="4dp">
+        android:layout_margin="4dp"
+        android:id="@+id/parent_layout">
 
         <ImageView
             android:id="@+id/ImageView"
