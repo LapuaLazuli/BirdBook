@@ -18,13 +18,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ArrayList<UI_List_Item> birdList = new ArrayList<>();
-        birdList.add(new UI_List_Item(R.drawable.ic_flight_black_24dp, "new bird"));
+        birdList.add(new UI_List_Item(R.drawable.ic_flight_black_24dp, "House finch"));
         birdList.add(new UI_List_Item(R.drawable.ic_android_black_24dp, "Test Name"));
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
-        birdListActivity = new Bird_List_Activity(birdList);
+        birdListActivity = new Bird_List_Activity(this, birdList);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(birdListActivity);
