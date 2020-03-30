@@ -1,10 +1,14 @@
 package com.e.birdbook;
 
 import android.content.Context;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 public class Requester
 {
 
+    @RequiresApi(api = Build.VERSION_CODES.O_MR1)
     public static UIFriendlyInfo request(Request request, Context context)
     {
         UIFriendlyInfo UIinfo = null;
