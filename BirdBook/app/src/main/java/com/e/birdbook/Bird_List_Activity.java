@@ -88,10 +88,10 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
        {
            Dictionary<String, String> allBirds = res.getInfo();
            Enumeration<String> keys = allBirds.keys();
-//       while (keys.hasMoreElements()){
-//           System.out.println(allBirds.get(keys));
-//           birdList.add(new UI_List_Item(0, allBirds.get(keys)));
-//       }
+       while (keys.hasMoreElements()){
+           System.out.println(allBirds.get(keys));
+           birdList.add(new UI_List_Item(0, allBirds.get(keys)));
+       }
        }
        else
            System.out.println("ERROR: results in main activity are null");
