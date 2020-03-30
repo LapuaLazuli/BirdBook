@@ -12,7 +12,7 @@ class BirdListPackage extends BirdPackage implements Package
     {
         names = new ArrayList<String>();
 
-        Enumeration<String> nameEnum = bir.getResults().elements();
+        Enumeration<String> nameEnum = bir.getResults().keys();
         while(nameEnum.hasMoreElements())
         {
             names.add(nameEnum.nextElement());

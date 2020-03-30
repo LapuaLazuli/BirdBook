@@ -9,7 +9,7 @@ public class BirdInfoContentPresenter
     {
         Dictionary<String, String> info = new Hashtable<String, String>();
 
-        if(bird != null)
+        try
         {
             info.put("infoName", bird.getName());
             //info.put("infoImage", bird.getImage());
@@ -23,7 +23,10 @@ public class BirdInfoContentPresenter
             info.put("infoBehavior", bird.getBehavior());
             info.put("infoConservation", bird.getConservation());
         }
-
+        catch (NullPointerException e)
+        {
+            System.out.println("Error: NULL");
+        }
 
         return new UIFriendlyInfo(info);
     }
