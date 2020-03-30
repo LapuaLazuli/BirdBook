@@ -60,6 +60,8 @@ public class DBAcessor {
                 }
                 bir.setResults(d2); //places dictionary into inner BirdInfoResults
                 d.put(cs.getString(0), bir); //places into primary Dictionary with format <birdname, BirdInfoResults>
+
+                ret.setType(Results.TYPE.BIRDLIST);
             }
         }
         else {
@@ -76,6 +78,7 @@ public class DBAcessor {
                     found = true;
                 }
             }
+            ret.setType(Results.TYPE.BIRD);
         }
         cs.close();
         //conn.close();
