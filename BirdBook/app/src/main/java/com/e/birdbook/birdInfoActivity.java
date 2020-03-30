@@ -59,15 +59,19 @@ public class birdInfoActivity extends AppCompatActivity
             {
                 switch(currentUIElement.getClass().toString())
                 {
-                    case "TextView":
+                    case "class androidx.appcompat.widget.AppCompatTextView":
                         TextView currentTextView = (TextView)currentUIElement;
                         currentTextView.setText(info.get(currentKey));
                         break;
 
-                    case "ImageView":
+                    case "class androidx.appcompat.widget.AppCompatImageView":
                         ImageView currentImageView = (ImageView)currentUIElement;
                         int imageId = getResources().getIdentifier(info.get(currentKey), null, getPackageName());
                         currentImageView.setImageResource(imageId);
+                        break;
+
+                    default:
+                        System.out.println("DEBUG: unrecognized class: " + currentUIElement.getClass().toString());
                         break;
                 }
             }
