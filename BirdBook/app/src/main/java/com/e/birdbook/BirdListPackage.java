@@ -7,15 +7,20 @@ import java.util.List;
 class BirdListPackage extends BirdPackage implements Package
 {
     private List<String> names;
+    private List<String> imageURLs;
     private Request.TYPE type;
+
     public BirdListPackage(Results bir)
     {
         names = new ArrayList<String>();
+        imageURLs = new ArrayList<String>();
 
-        Enumeration<String> nameEnum = bir.getResults().keys();
-        while(nameEnum.hasMoreElements())
+        //alternates between names and images
+        Enumeration<String> nameImageEnum = bir.getResults().keys();
+        while(nameImageEnum.hasMoreElements())
         {
-            names.add(nameEnum.nextElement());
+            names.add(nameImageEnum.nextElement());
+            imageURLs.add(nameImageEnum.nextElement());
         }
 
         this.type = Request.TYPE.BIRDLIST;
@@ -25,4 +30,6 @@ class BirdListPackage extends BirdPackage implements Package
     {
         return this.names;
     }
+
+    public List<String> getImageURLs() { return this.imageURLs; }
 }

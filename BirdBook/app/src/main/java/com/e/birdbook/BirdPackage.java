@@ -5,7 +5,8 @@ import java.util.Dictionary;
 public class BirdPackage implements Package
 {
 
-    private String name, description, finding, habitat, diet, nest, behavior, conservation, size, shape;
+    private String name, description, finding, habitat, diet, nest,
+                    behavior, conservation, size, shape, imageURL;
     private Request.TYPE type;
 
     public BirdPackage(){type = Request.TYPE.INVALID;}
@@ -22,6 +23,7 @@ public class BirdPackage implements Package
         setConservation((String) d.get("conservation"));
         setShape((String) d.get("shape"));
         setSize((String) d.get("size"));
+        setImageURL((String) d.get("image"));
         this.type = Request.TYPE.BIRD;
     }
 
@@ -65,6 +67,8 @@ public class BirdPackage implements Package
         this.size = size;
     }
 
+    public void setImageURL(String imageURL) { this.imageURL = imageURL}
+
     public String getName() {
         return name;
     }
@@ -104,6 +108,8 @@ public class BirdPackage implements Package
     public String getShape() {
         return shape;
     }
+
+    public String getImageURL() { return this.imageURL; }
 
     public Request.TYPE getType(){
         return type;
