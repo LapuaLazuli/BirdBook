@@ -67,7 +67,7 @@ public class BirdPackage implements Package
         this.size = size;
     }
 
-    public void setImageURL(String imageURL) { this.imageURL = imageURL}
+    public void setImageURL(String imageURL) { this.imageURL = imageURL; }
 
     public String getName() {
         return name;

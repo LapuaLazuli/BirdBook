@@ -12,7 +12,7 @@ public class BirdInfoContentPresenter
         try
         {
             info.put("infoName", bird.getName());
-            //info.put("infoImage", bird.getImage());
+            info.put("infoImage", bird.getImageURL());
             info.put("infoDescription", bird.getDescription());
             info.put("infoSize", bird.getSize());
             info.put("infoShape", bird.getShape());
