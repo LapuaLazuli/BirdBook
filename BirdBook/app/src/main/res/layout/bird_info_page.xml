@@ -241,6 +241,29 @@
                 android:padding="2dp"
                 android:text="Conservation Placeholder"
                 android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/colorHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:padding="2dp"
+                android:text="@string/Color"
+                android:textSize="32sp" />
+
+            <TextView
+                android:id="@+id/infoColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:maxLines="8"
+                android:minLines="2"
+                android:layout_weight="1"
+                android:scrollHorizontally="false"
+                android:ellipsize="end"
+                android:padding="2dp"
+                android:text="Color Placeholder"
+                android:textSize="16sp" />
         </LinearLayout>
 
     </ScrollView>

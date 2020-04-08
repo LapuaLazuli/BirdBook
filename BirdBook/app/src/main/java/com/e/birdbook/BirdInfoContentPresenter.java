@@ -22,6 +22,7 @@ public class BirdInfoContentPresenter
             info.put("infoNest", bird.getNest());
             info.put("infoBehavior", bird.getBehavior());
             info.put("infoConservation", bird.getConservation());
+            info.put("infoColor", bird.getColor());
         }
         catch (NullPointerException e)
         {

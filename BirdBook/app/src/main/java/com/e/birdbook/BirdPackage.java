@@ -6,24 +6,25 @@ public class BirdPackage implements Package
 {
 
     private String name, description, finding, habitat, diet, nest,
-                    behavior, conservation, size, shape, imageURL;
+                    behavior, conservation, size, shape, imageURL, color;
     private Request.TYPE type;
 
     public BirdPackage(){type = Request.TYPE.INVALID;}
 
     public BirdPackage(Results bir){
-        Dictionary d = bir.getResults();
-        setName((String) d.get("name"));
-        setDescripton((String) d.get("description"));
-        setFinding((String) d.get("finding"));
-        setHabitat((String) d.get("habitat"));
-        setDiet((String) d.get("diet"));
-        setNest((String) d.get("nest"));
-        setBehavior((String) d.get("behavior"));
-        setConservation((String) d.get("conservation"));
-        setShape((String) d.get("shape"));
-        setSize((String) d.get("size"));
-        setImageURL((String) d.get("image"));
+        Dictionary<String, String> d = bir.getResults();
+        setName(d.get("name"));
+        setDescripton(d.get("description"));
+        setFinding(d.get("finding"));
+        setHabitat(d.get("habitat"));
+        setDiet(d.get("diet"));
+        setNest(d.get("nest"));
+        setBehavior(d.get("behavior"));
+        setConservation(d.get("conservation"));
+        setShape(d.get("shape"));
+        setSize(d.get("size"));
+        setImageURL(d.get("image"));
+        setColor(d.get("color"));
         this.type = Request.TYPE.BIRD;
     }
 
@@ -69,6 +70,10 @@ public class BirdPackage implements Package
 
     public void setImageURL(String imageURL) { this.imageURL = imageURL; }
 
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     public String getName() {
         return name;
     }
@@ -110,6 +115,10 @@ public class BirdPackage implements Package
     }
 
     public String getImageURL() { return this.imageURL; }
+
+    public String getColor() {
+        return color;
+    }
 
     public Request.TYPE getType(){
         return type;
