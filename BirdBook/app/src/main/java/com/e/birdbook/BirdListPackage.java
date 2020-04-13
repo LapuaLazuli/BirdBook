@@ -23,7 +23,7 @@ class BirdListPackage extends BirdPackage implements Package
             imageURLs.add(nameImageEnum.nextElement());
         }
 
-        this.type = Request.TYPE.BIRDLIST;
+        Request.TYPE type = Request.TYPE.BIRDLIST;
     }
 
     public List<String> getNames()

@@ -7,6 +7,7 @@ public class BirdPackage implements Package
 
     private String name, description, finding, habitat, diet, nest,
                     behavior, conservation, size, shape, imageURL;
+                    
     private Request.TYPE type;
 
     public BirdPackage(){type = Request.TYPE.INVALID;}

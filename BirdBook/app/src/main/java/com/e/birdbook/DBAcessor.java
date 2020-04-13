@@ -11,80 +11,80 @@ import java.util.Hashtable;
 import java.util.List;
 
 public class DBAcessor {
+    private static SQLiteDatabase birdDatabase;
+    private static Results ret;
+    private static List<String> requestedFieldsList;
+    private static Dictionary outerDictionary;
+    private static String searchValue;
+    private static String searchField;
+
     @RequiresApi(api = Build.VERSION_CODES.O_MR1)
     public static Results access(Request query, Context c) throws Exception {
-        //connects code to bird.db
-        System.out.println("DEBUG: CHECKPOINT 0");
-        /*
-        Class.forName("org.sqlite.JDBC");
-        System.out.println("db Path: " + c.getDatabasePath("databases\\bird.db").getAbsolutePath());
-        String path = c.getDatabasePath("databases\\bird.db").getAbsolutePath();
-        Properties config = new Properties();
-        config.setProperty("open_mode", "1");
 
-        Connection conn = DriverManager.getConnection("jdbc:sqlite:\\data\\user\\0\\com.e.birdbook\\databases\\bird.db", config);
-        Statement stat = conn.createStatement();
-         */
-        DBHelper dbh = new DBHelper(c);
-        System.out.println("Does this exist:" + c.getDatabasePath("bird.db").exists());
+        //initialize fields
+        initialize(query, c);
 
-        SQLiteDatabase bird = dbh.getReadableDatabase();
-
-
-
-        System.out.println("DEBUG: CHECKPOINT 1");
-
-        //initialize return class, returning dictionary, and search values
-        Results ret = new BirdInfoResults();
-        List<String> l = query.getRequestedFields();
-        Dictionary d = new Hashtable();
-        String v = query.getSearchValue();
-        String f = query.getSearchField();
-
-        System.out.println("DEBUG: CHECKPOINT 2");
-
-        //begins parsing database
-        Cursor cs = bird.rawQuery("select * from birds", null);
-
-        boolean found = false;
-
-        if(query.getType() == Request.TYPE.BIRDLIST){
-            //used for grabbing data from all birds
-            System.out.println("DEBUG: CORRECT SECTION");
-            for (cs.moveToFirst(); !cs.isAfterLast(); cs.moveToNext()){
-                BirdInfoResults bir = new BirdInfoResults(); //creates a new BirdInfoResults to go into dictionary
-                Dictionary d2 = new Hashtable(); //creates a dictionary to go in bir
-                for (String q : l){
-                    System.out.println("Query: " + q);
-                    d2.put(q, cs.getString(cs.getColumnIndex(q))); //fills in specified fields of that particular bird
-                }
-                bir.setResults(d2); //places dictionary into inner BirdInfoResults
-                d.put(cs.getString(0), bir); //places into primary Dictionary with format <birdname, BirdInfoResults>
-            }
-            ret.setType(Results.TYPE.BIRDLIST);
-        }
-        else {
-            System.out.println("DEBUG: INCORRECT SECTION");
-            cs.moveToFirst();
-            while (cs.moveToNext() && !found) {
-                if (cs.getString(cs.getColumnIndex(f)).equals(v)) { //checks if searchValue matches the value of corresponding searchField
-                    d.put(f, v); //puts successful match into dictionary
-                    //begin loading in requestedFields values into dictionary
-                    for (String q : l){
-                        //loads in field from list l and corresponding value found in <birds> entry
-                        d.put(q, cs.getString(cs.getColumnIndex(q)));
-                    }
-                    found = true;
-                }
-            }
-            ret.setType(Results.TYPE.BIRD);
-        }
+        //evaluate request type and grab info from db
+        Cursor cs = birdDatabase.rawQuery("select * from birds", null);
+        checkQueryTypeAndInitiateParsing(query, cs);
         cs.close();
-        //conn.close();
-        ret.setResults(d);
+        ret.setResults(outerDictionary);
 
         //returns BirdInfoResults class
         return ret;
+    }
+
+    private static void initialize(Request query, Context c){
+        //connects code to bird.db
+        DBHelper dbh = new DBHelper(c);
+        birdDatabase = dbh.getReadableDatabase();
+
+        //initialize return class, returning dictionary, and search values
+        ret = new BirdInfoResults();
+        requestedFieldsList = query.getRequestedFields();
+        outerDictionary = new Hashtable();
+        searchValue = query.getSearchValue();
+        searchField = query.getSearchField();
+    }
+
+    private static void checkQueryTypeAndInitiateParsing(Request query, Cursor cs){
+        if (query.getType() == Request.TYPE.BIRD){
+            ret.setType(Results.TYPE.BIRD);
+            grabInfoForBird(cs);
+        }
+        else {
+            ret.setType(Results.TYPE.BIRDLIST);
+            grabInfoForBirdList(cs);
+        }
+    }
+
+    private static void grabInfoForBirdList(Cursor cs){
+        //used for grabbing data from all birds
+        for (cs.moveToFirst(); !cs.isAfterLast(); cs.moveToNext()){
+            BirdInfoResults innerBIR = new BirdInfoResults(); //creates a new BirdInfoResults to go into dictionary
+            Dictionary innerDictionary = new Hashtable(); //creates a dictionary to go in bir
+            for (String q : requestedFieldsList){
+                innerDictionary.put(q, cs.getString(cs.getColumnIndex(q))); //fills in specified fields of that particular bird
+            }
+            innerBIR.setResults(innerDictionary); //places dictionary into inner BirdInfoResults
+            outerDictionary.put(cs.getString(0), innerBIR); //places into primary Dictionary with format <birdname, BirdInfoResults>
+        }
+    }
+
+    private static void grabInfoForBird(Cursor cs){
+        boolean found = false;
+        cs.moveToFirst();
+        while (cs.moveToNext() && !found) {
+            if (cs.getString(cs.getColumnIndex(searchField)).equals(searchValue)) { //checks if searchValue matches the value of corresponding searchField
+                outerDictionary.put(searchField, searchValue); //puts successful match into dictionary
+                //begin loading in requestedFields values into dictionary
+                for (String q : requestedFieldsList){
+                    //loads in field from list l and corresponding value found in <birds> entry
+                    outerDictionary.put(q, cs.getString(cs.getColumnIndex(q)));
+                }
+                found = true;
+            }
+        }
     }
 
 }
