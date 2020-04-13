@@ -7,7 +7,7 @@ import java.util.List;
 class BirdListPackage extends BirdPackage implements Package
 {
     private List<String> names;
-    private Request.TYPE type;
+
     public BirdListPackage(Results bir)
     {
         names = new ArrayList<String>();
@@ -18,7 +18,7 @@ class BirdListPackage extends BirdPackage implements Package
             names.add(nameEnum.nextElement());
         }
 
-        this.type = Request.TYPE.BIRDLIST;
+        Request.TYPE type = Request.TYPE.BIRDLIST;
     }
 
     public List<String> getNames()
