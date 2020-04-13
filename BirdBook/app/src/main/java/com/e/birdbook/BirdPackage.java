@@ -23,7 +23,7 @@ public class BirdPackage implements Package
         setConservation((String) d.get("conservation"));
         setShape((String) d.get("shape"));
         setSize((String) d.get("size"));
-        setImageURL((String) d.get("image"));
+        setImageURL((String) d.get("image_path"));
         this.type = Request.TYPE.BIRD;
     }
 
