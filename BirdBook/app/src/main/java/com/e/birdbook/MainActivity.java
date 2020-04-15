@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ArrayList<UI_List_Item> birdList = new ArrayList<>();
-        String imageList = "https://i.redd.it/vhcxwzq52ch41.jpg";
+        String imageList = "/BirdBook/BirdBook/media/images/american_coot.jpg";
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
