@@ -29,19 +29,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ArrayList<UI_List_Item> birdList = new ArrayList<>();
+        String imageList = "https://i.redd.it/vhcxwzq52ch41.jpg";
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
-        birdListActivity = new Bird_List_Activity(birdList, this);
-
+        birdListActivity = new Bird_List_Activity(birdList, this, imageList);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(birdListActivity);
 
         context = this;
     }
-
-
 }
-

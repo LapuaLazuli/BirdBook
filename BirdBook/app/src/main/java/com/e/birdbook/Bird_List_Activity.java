@@ -3,12 +3,10 @@ package com.e.birdbook;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.os.Parcelable;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -16,23 +14,27 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Enumeration;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.ActivityViewHolder> {
     private ArrayList<UI_List_Item> birdList;
-    private Context mContext;
+    //TODO change imageList to ArrayList when birds images are added to Database
+    private String imageList;
+    private Context listActivity;
 
-
-
-   public static class ActivityViewHolder extends RecyclerView.ViewHolder{
-        public ImageView imageView;
+    public static class ActivityViewHolder extends RecyclerView.ViewHolder{
+        public CircleImageView image;
         public TextView birdName;
         public RelativeLayout parentLayout;
         public ActivityViewHolder(@NonNull View itemView) {
             super(itemView);
-            //imageView.findViewById(R.id.ImageView);
+            image = itemView.findViewById(R.id.image);
             //imageView = imageView.findViewById(R.id.ImageView);
             birdName = itemView.findViewById(R.id.TextName);
             parentLayout = itemView.findViewById(R.id.parent_layout);
@@ -41,10 +43,11 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
 
 
     @RequiresApi(api = Build.VERSION_CODES.O_MR1)
-    public Bird_List_Activity(ArrayList<UI_List_Item> birdList, Context context){
-       this.mContext = context;
+    public Bird_List_Activity(ArrayList<UI_List_Item> birdList, Context context, String images){
+        this.listActivity = context;
         this.birdList = birdList;
-       getAllData();
+        this.imageList = images;
+        getAllData();
 
     }
 
@@ -59,14 +62,16 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
     @Override
     public void onBindViewHolder(@NonNull ActivityViewHolder holder, final int position) {
         UI_List_Item currentItem = birdList.get(position);
-       // holder.imageView.setImageResource(currentItem.getBirdImage());
+
+        Glide.with(listActivity).asBitmap().load(imageList).into(holder.image);
         holder.birdName.setText(currentItem.getBirdName());
+
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, birdInfoActivity.class);
+                Intent intent = new Intent(listActivity, birdInfoActivity.class);
                 intent.putExtra("Bird", birdList.get(position).getBirdName());
-                mContext.startActivity(intent);
+                listActivity.startActivity(intent);
             }
         });
     }
@@ -77,24 +82,20 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
     }
 
 
-
-
-
     @RequiresApi(api = Build.VERSION_CODES.O_MR1)
     public void getAllData(){
-       Request req = BirdListingRequestPackager.BirdListRequest();
-       UIFriendlyInfo res = Requester.request(req, this.mContext);
-       if(res != null)
-       {
-           Dictionary<String, String> allBirds = res.getInfo();
-           Enumeration<String> elements = allBirds.elements();
-       while (elements.hasMoreElements()){
-           //System.out.println(allBirds.get(elements));
-           birdList.add(new UI_List_Item(0, elements.nextElement()));
-       }
-       }
-       else
-           System.out.println("ERROR: results in main activity are null");
-
+        Request req = BirdListingRequestPackager.BirdListRequest();
+        UIFriendlyInfo res = Requester.request(req, this.listActivity);
+        if(res != null)
+        {
+            Dictionary<String, String> allBirds = res.getInfo();
+            Enumeration<String> elements = allBirds.elements();
+            while (elements.hasMoreElements()){
+                //System.out.println(allBirds.get(elements));
+                birdList.add(new UI_List_Item(0, elements.nextElement()));
+            }
+        }
+        else
+            System.out.println("ERROR: results in main activity are null");
     }
 }
