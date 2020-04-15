@@ -26,10 +26,6 @@ public class birdInfoActivity extends AppCompatActivity
         //get info about what page this is
         String birdName = getIntent().getStringExtra("Bird");
 
-        //test loading image
-//        ImageView currentImageView = (ImageView)this.findViewById(R.id.infoImage);;
-//        currentImageView.setImageBitmap(BitmapFactory.decodeFile("../../media/pictures/american_coot"));
-
         if(birdName != null)
         {
             //call request packager to get request
@@ -71,9 +67,8 @@ public class birdInfoActivity extends AppCompatActivity
 
                     case "class androidx.appcompat.widget.AppCompatImageView":
                         ImageView currentImageView = (ImageView)currentUIElement;
-                        //int imageId = getResources().getIdentifier(info.get(currentKey), null, getPackageName());
-                        //currentImageView.setImageResource(imageId);
-                        currentImageView.setImageBitmap(BitmapFactory.decodeFile(info.get(currentKey)));
+                        int imageId = getResources().getIdentifier(info.get(currentKey), null, getPackageName());
+                        currentImageView.setImageResource(imageId);
                         break;
 
                     default:
