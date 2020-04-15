@@ -1,5 +1,6 @@
 
 package com.e.birdbook;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,10 @@ public class birdInfoActivity extends AppCompatActivity
         setContentView(R.layout.bird_info_page);
         //get info about what page this is
         String birdName = getIntent().getStringExtra("Bird");
+
+        //test loading image
+//        ImageView currentImageView = (ImageView)this.findViewById(R.id.infoImage);;
+//        currentImageView.setImageBitmap(BitmapFactory.decodeFile("../../media/pictures/american_coot"));
 
         if(birdName != null)
         {
@@ -66,8 +71,9 @@ public class birdInfoActivity extends AppCompatActivity
 
                     case "class androidx.appcompat.widget.AppCompatImageView":
                         ImageView currentImageView = (ImageView)currentUIElement;
-                        int imageId = getResources().getIdentifier(info.get(currentKey), null, getPackageName());
-                        currentImageView.setImageResource(imageId);
+                        //int imageId = getResources().getIdentifier(info.get(currentKey), null, getPackageName());
+                        //currentImageView.setImageResource(imageId);
+                        currentImageView.setImageBitmap(BitmapFactory.decodeFile(info.get(currentKey)));
                         break;
 
                     default:
