@@ -19,13 +19,18 @@ public class DBAcessor {
     private static String searchField;
 
     @RequiresApi(api = Build.VERSION_CODES.O_MR1)
-    public static Results access(Request query, Context c) throws Exception {
+    public static Results access(Request query, Context c){
 
         //initialize fields
         initialize(query, c);
 
         //evaluate request type and grab info from db
         Cursor cs = birdDatabase.rawQuery("select * from birds", null);
+        cs.moveToFirst();
+        while (!cs.isAfterLast()){
+            System.out.println(cs.getString(1));
+            cs.moveToNext();
+        }
         checkQueryTypeAndInitiateParsing(query, cs);
         cs.close();
         ret.setResults(outerDictionary);
@@ -35,7 +40,7 @@ public class DBAcessor {
     }
 
     private static void initialize(Request query, Context c){
-        //connects code to bird.db
+        //connects code to bird_v2.db
         DBHelper dbh = new DBHelper(c);
         birdDatabase = dbh.getReadableDatabase();
 
