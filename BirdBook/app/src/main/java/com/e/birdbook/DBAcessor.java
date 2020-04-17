@@ -79,7 +79,8 @@ public class DBAcessor {
     private static void grabInfoForBird(Cursor cs){
         boolean found = false;
         cs.moveToFirst();
-        while (cs.moveToNext() && !found) {
+        while (!cs.isAfterLast() && !found) {
+            String test = cs.getString(cs.getColumnIndex(searchField));
             if (cs.getString(cs.getColumnIndex(searchField)).equals(searchValue)) { //checks if searchValue matches the value of corresponding searchField
                 outerDictionary.put(searchField, searchValue); //puts successful match into dictionary
                 //begin loading in requestedFields values into dictionary
@@ -89,6 +90,7 @@ public class DBAcessor {
                 }
                 found = true;
             }
+            cs.moveToNext();
         }
     }
 
