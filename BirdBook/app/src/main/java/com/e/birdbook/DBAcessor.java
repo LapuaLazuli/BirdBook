@@ -28,7 +28,7 @@ public class DBAcessor {
         Cursor cs = birdDatabase.rawQuery("select * from birds", null);
         cs.moveToFirst();
         while (!cs.isAfterLast()){
-            System.out.println(cs.getString(1));
+            System.out.println(cs.getString(10));
             cs.moveToNext();
         }
         checkQueryTypeAndInitiateParsing(query, cs);
