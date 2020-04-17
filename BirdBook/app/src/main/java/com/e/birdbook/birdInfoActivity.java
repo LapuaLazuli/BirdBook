@@ -67,7 +67,10 @@ public class birdInfoActivity extends AppCompatActivity
 
                     case "class androidx.appcompat.widget.AppCompatImageView":
                         ImageView currentImageView = (ImageView)currentUIElement;
-                        int imageId = getResources().getIdentifier(info.get(currentKey), null, getPackageName());
+                        String imageFileName = info.get(currentKey);
+                        imageFileName = imageFileName.substring(0, imageFileName.length() - 4);
+                        int imageId = getResources().getIdentifier(imageFileName, "drawable", getPackageName());
+                        System.out.println("DEBUG imageID = " + imageId + " imageFileName = " + imageFileName);
                         currentImageView.setImageResource(imageId);
                         break;
 
