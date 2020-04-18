@@ -8,25 +8,25 @@ import java.util.List;
 public class UIFriendlyInfo
 {
     // key: UIelement name | value: new value
-    private Dictionary<String, String> info;
+    private List<String> uiElements;
+    private List<String> values;
 
     public UIFriendlyInfo()
     {
-        this.info = new Hashtable<String, String>();
+        this.uiElements = new ArrayList<>();
+        this.values = new ArrayList<>();
     }
 
-    public UIFriendlyInfo(Dictionary<String, String> results)
+    public UIFriendlyInfo(List<String> uiElements, List<String> values)
     {
-        this.info = results;
+        this.uiElements = uiElements;
+        this.values = values;
     }
 
-    public void setInfo(Dictionary<String, String> info)
+    public List<String> getUIElements()
     {
-        this.info = info;
+        return this.uiElements;
     }
 
-    public Dictionary<String, String> getInfo()
-    {
-        return this.info;
-    }
+    public List<String> getValues() { return this.values; }
 }

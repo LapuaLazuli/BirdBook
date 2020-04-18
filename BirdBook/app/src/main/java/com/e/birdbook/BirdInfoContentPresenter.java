@@ -1,33 +1,58 @@
 package com.e.birdbook;
 
+import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
+import java.util.List;
 
 public class BirdInfoContentPresenter
 {
     public static UIFriendlyInfo makeUIFriendly(BirdPackage bird)
     {
-        Dictionary<String, String> info = new Hashtable<String, String>();
+        //output
+        List<String> ui = new ArrayList<String>();
+        List<String> values = new ArrayList<String>();
 
         try
         {
-            info.put("infoName", bird.getName());
-            //info.put("infoImage", bird.getImage());
-            info.put("infoDescription", bird.getDescription());
-            info.put("infoSize", bird.getSize());
-            info.put("infoShape", bird.getShape());
-            info.put("infoFinding", bird.getFinding());
-            info.put("infoHabitat", bird.getHabitat());
-            info.put("infoDiet", bird.getDiet());
-            info.put("infoNest", bird.getNest());
-            info.put("infoBehavior", bird.getBehavior());
-            info.put("infoConservation", bird.getConservation());
+            ui.add("infoName");
+            values.add(bird.getName());
+
+            ui.add("infoImage");
+            values.add(bird.getImageURL());
+
+            ui.add("infoDescription");
+            values.add(bird.getDescription());
+
+            ui.add("infoSize");
+            values.add(bird.getSize());
+
+            ui.add("infoShape");
+            values.add(bird.getShape());
+
+            ui.add("infoFinding");
+            values.add(bird.getFinding());
+
+            ui.add("infoHabitat");
+            values.add(bird.getHabitat());
+
+            ui.add("infoDiet");
+            values.add(bird.getDiet());
+
+            ui.add("infoNest");
+            values.add(bird.getNest());
+
+            ui.add("infoBehavior");
+            values.add(bird.getBehavior());
+
+            ui.add("infoConservation");
+            values.add(bird.getConservation());
         }
         catch (NullPointerException e)
         {
             System.out.println("Error: NULL");
         }
 
-        return new UIFriendlyInfo(info);
+        return new UIFriendlyInfo(ui, values);
     }
 }

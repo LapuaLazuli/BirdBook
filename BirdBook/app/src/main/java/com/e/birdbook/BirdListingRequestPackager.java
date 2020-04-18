@@ -12,7 +12,7 @@ public class BirdListingRequestPackager
         String searchValue = "";
 
         requestFields.add("name");
-        //requestFields.add("image");
+        requestFields.add("image_path");
 
         return new BirdInfoRequest(requestFields, searchField, searchValue, Request.TYPE.BIRDLIST);
 

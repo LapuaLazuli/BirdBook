@@ -1,5 +1,6 @@
 
 package com.e.birdbook;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ import org.w3c.dom.Text;
 import java.util.Dictionary;
 import java.util.Enumeration;
 import java.util.Hashtable;
+import java.util.List;
 
 public class birdInfoActivity extends AppCompatActivity
 {
@@ -45,28 +47,31 @@ public class birdInfoActivity extends AppCompatActivity
         //update each element with corresponding data pieces
 
         //get 0 since there is only 1 bird entry to use
-        Dictionary<String, String> info = UIInfo.getInfo();
-        Enumeration<String> keysEnu = info.keys();
+        List<String> ui = UIInfo.getUIElements();
+        List<String> values = UIInfo.getValues();
+
         View currentUIElement;
-        String currentKey;
+        String currentUIElementName;
         int resourceID;
-        while(keysEnu.hasMoreElements())
+
+        for(int i = 0; i < ui.size(); i++)
         {
-            currentKey = keysEnu.nextElement();
-            resourceID = getResources().getIdentifier(currentKey, "id", getPackageName());
+            currentUIElementName = ui.get(i);
+            resourceID = getResources().getIdentifier(currentUIElementName, "id", getPackageName());
             currentUIElement = this.findViewById(resourceID);
+
             if(currentUIElement != null)
             {
                 switch(currentUIElement.getClass().toString())
                 {
                     case "class androidx.appcompat.widget.AppCompatTextView":
                         TextView currentTextView = (TextView)currentUIElement;
-                        currentTextView.setText(info.get(currentKey));
+                        currentTextView.setText(values.get(i));
                         break;
 
                     case "class androidx.appcompat.widget.AppCompatImageView":
                         ImageView currentImageView = (ImageView)currentUIElement;
-                        int imageId = getResources().getIdentifier(info.get(currentKey), null, getPackageName());
+                        int imageId = getResources().getIdentifier(values.get(i), "drawable", getPackageName());
                         currentImageView.setImageResource(imageId);
                         break;
 
@@ -76,5 +81,6 @@ public class birdInfoActivity extends AppCompatActivity
                 }
             }
         }
+
     }
 }
