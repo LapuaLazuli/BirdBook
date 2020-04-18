@@ -35,7 +35,7 @@
                 android:layout_width="350dp"
                 android:layout_height="250dp"
                 android:layout_marginHorizontal="30dp"
-                app:srcCompat="@android:drawable/house_sparrow" />
+                app:srcCompat="@drawable/american_robin" />
 
             <TextView
                 android:id="@+id/Header1"
