@@ -61,12 +61,12 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
     @Override
     public void onBindViewHolder(@NonNull ActivityViewHolder holder, final int position) {
         UI_List_Item currentItem = birdList.get(position);
-       // holder.imageView.setImageResource(currentItem.getBirdImage());
+//        holder.imageView.setImageResource(currentItem.getBirdImage());
         holder.birdName.setText(currentItem.getBirdName());
 
         holder.imageView = holder.imageView.findViewById(R.id.listingImage);
         int imageId = birdListContext.getResources().getIdentifier(currentItem.getBirdImage(),
-                null, birdListContext.getPackageName());
+                "drawable", birdListContext.getPackageName());
 
         holder.imageView.setImageResource(imageId);
 
