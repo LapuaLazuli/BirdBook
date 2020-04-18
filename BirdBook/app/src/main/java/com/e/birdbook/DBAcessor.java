@@ -68,11 +68,7 @@ public class DBAcessor {
         for (cs.moveToFirst(); !cs.isAfterLast(); cs.moveToNext()){
             BirdInfoResults innerBIR = new BirdInfoResults(); //creates a new BirdInfoResults to go into dictionary
             Dictionary innerDictionary = new Hashtable(); //creates a dictionary to go in bir
-            for (String q : requestedFieldsList){
-                innerDictionary.put(q, cs.getString(cs.getColumnIndex(q))); //fills in specified fields of that particular bird
-            }
-            innerBIR.setResults(innerDictionary); //places dictionary into inner BirdInfoResults
-            outerDictionary.put(cs.getString(0), innerBIR); //places into primary Dictionary with format <birdname, BirdInfoResults>
+            outerDictionary.put(cs.getString(0), cs.getString(11)); //places into primary Dictionary with format <birdname, BirdInfoResults>
         }
     }
 
@@ -80,7 +76,6 @@ public class DBAcessor {
         boolean found = false;
         cs.moveToFirst();
         while (!cs.isAfterLast() && !found) {
-            String test = cs.getString(cs.getColumnIndex(searchField));
             if (cs.getString(cs.getColumnIndex(searchField)).equals(searchValue)) { //checks if searchValue matches the value of corresponding searchField
                 outerDictionary.put(searchField, searchValue); //puts successful match into dictionary
                 //begin loading in requestedFields values into dictionary
