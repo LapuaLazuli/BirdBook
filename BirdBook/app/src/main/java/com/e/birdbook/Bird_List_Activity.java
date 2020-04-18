@@ -34,6 +34,7 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
             //imageView.findViewById(R.id.ImageView);
             //imageView = imageView.findViewById(R.id.ImageView);
             birdName = itemView.findViewById(R.id.TextName);
+            imageView = itemView.findViewById(R.id.listingImage);
             parentLayout = itemView.findViewById(R.id.parent_layout);
         }
     }
@@ -60,8 +61,9 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
         UI_List_Item currentItem = birdList.get(position);
        // holder.imageView.setImageResource(currentItem.getBirdImage());
         holder.birdName.setText(currentItem.getBirdName());
-        
-        int imageId = holder.imageView.getResources().getIdentifier(currentItem.getBirdImage(),
+
+        holder.imageView = holder.imageView.findViewById(R.id.listingImage);
+        int imageId = birdListContext.getResources().getIdentifier(currentItem.getBirdImage(),
                 null, birdListContext.getPackageName());
 
         holder.imageView.setImageResource(imageId);
