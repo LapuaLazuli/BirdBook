@@ -16,7 +16,7 @@ public class BirdListContentPresenter
         for(int i = 0; i < names.size(); i++)
         {
             info.put("TextName" + i, names.get(i));
-            info.put("ImageView", imageURLs.get(i));
+            info.put("ImageView" + i, imageURLs.get(i));
         }
 
         return new UIFriendlyInfo(info);
