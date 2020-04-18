@@ -19,8 +19,9 @@ class BirdListPackage extends BirdPackage implements Package
         Enumeration<String> nameImageEnum = bir.getResults().keys();
         while(nameImageEnum.hasMoreElements())
         {
-            names.add(nameImageEnum.nextElement());
-            imageURLs.add(nameImageEnum.nextElement());
+            String newElement = nameImageEnum.nextElement();
+            names.add(newElement);
+            imageURLs.add(newElement);
         }
 
         Request.TYPE type = Request.TYPE.BIRDLIST;
