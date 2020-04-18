@@ -96,7 +96,9 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
            while (elements.hasMoreElements()) {
                //System.out.println(allBirds.get(elements));
                birdName = elements.nextElement();
+               System.out.println("DEBUG: element (name): " + birdName);
                imageName = elements.nextElement();
+               System.out.println("DEBUG: element (image): " + imageName);
                birdList.add(new UI_List_Item(imageName, birdName));
            }
        } else

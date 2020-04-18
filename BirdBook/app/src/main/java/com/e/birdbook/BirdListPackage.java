@@ -16,11 +16,16 @@ class BirdListPackage extends BirdPackage implements Package
         imageURLs = new ArrayList<String>();
 
         //alternates between names and images
-        Enumeration<String> nameImageEnum = bir.getResults().keys();
-        while(nameImageEnum.hasMoreElements())
+        Enumeration<String> nameEnum = bir.getResults().keys();
+        Enumeration<String> imageEnum = bir.getResults().elements();
+        while(nameEnum.hasMoreElements() && imageEnum.hasMoreElements())
         {
-            String newElement = nameImageEnum.nextElement();
+            String newElement = nameEnum.nextElement();
+            System.out.println("DEBUG: NEWELEMENT = " + newElement);
             names.add(newElement);
+            
+            newElement = imageEnum.nextElement();
+            System.out.println("DEBUG: NEWELEMENT = " + newElement);
             imageURLs.add(newElement);
         }
 
