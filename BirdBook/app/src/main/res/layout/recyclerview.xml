@@ -25,7 +25,8 @@
             android:text="Mock Up"
             android:textColor="@android:color/black"
             android:textSize="25dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:fontFamily="@font/arvo" />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
