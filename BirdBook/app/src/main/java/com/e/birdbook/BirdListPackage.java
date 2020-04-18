@@ -7,22 +7,35 @@ import java.util.List;
 class BirdListPackage extends BirdPackage implements Package
 {
     private List<String> names;
+    private List<String> imageURLs;
     private Request.TYPE type;
+
     public BirdListPackage(Results bir)
     {
         names = new ArrayList<String>();
+        imageURLs = new ArrayList<String>();
 
+        //alternates between names and images
         Enumeration<String> nameEnum = bir.getResults().keys();
-        while(nameEnum.hasMoreElements())
+        Enumeration<String> imageEnum = bir.getResults().elements();
+        while(nameEnum.hasMoreElements() && imageEnum.hasMoreElements())
         {
-            names.add(nameEnum.nextElement());
+            String newElement = nameEnum.nextElement();
+            System.out.println("DEBUG: NEWELEMENT = " + newElement);
+            names.add(newElement);
+
+            newElement = imageEnum.nextElement();
+            System.out.println("DEBUG: NEWELEMENT = " + newElement);
+            imageURLs.add(newElement);
         }
 
-        this.type = Request.TYPE.BIRDLIST;
+        Request.TYPE type = Request.TYPE.BIRDLIST;
     }
 
     public List<String> getNames()
     {
         return this.names;
     }
+
+    public List<String> getImageURLs() { return this.imageURLs; }
 }
