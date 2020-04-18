@@ -66,8 +66,6 @@ public class DBAcessor {
     private static void grabInfoForBirdList(Cursor cs){
         //used for grabbing data from all birds
         for (cs.moveToFirst(); !cs.isAfterLast(); cs.moveToNext()){
-            BirdInfoResults innerBIR = new BirdInfoResults(); //creates a new BirdInfoResults to go into dictionary
-            Dictionary innerDictionary = new Hashtable(); //creates a dictionary to go in bir
             outerDictionary.put(cs.getString(0), cs.getString(11)); //places into primary Dictionary with format <birdname, BirdInfoResults>
         }
     }
