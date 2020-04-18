@@ -5,15 +5,15 @@ import android.os.Parcelable;
 
 public class UI_List_Item //implements Parcelable
 {
-    private int birdImage;
+    private String birdImage;
     private String birdName;
 
-    public UI_List_Item(int birdImage, String birdName){
+    public UI_List_Item(String birdImage, String birdName){
         this.birdImage = birdImage;
         this.birdName = birdName;
     }
 
-    public int getBirdImage() {
+    public String getBirdImage() {
         return birdImage;
     }
 

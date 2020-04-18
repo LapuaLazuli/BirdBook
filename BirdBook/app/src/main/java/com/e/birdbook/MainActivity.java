@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         ArrayList<UI_List_Item> birdList = new ArrayList<>();
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
