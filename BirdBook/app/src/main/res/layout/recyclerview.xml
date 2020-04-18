@@ -22,9 +22,10 @@
             android:layout_marginLeft="35dp"
             android:layout_marginTop="8dp"
 
+            android:ellipsize="end"
             android:text="Mock Up"
             android:textColor="@android:color/black"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:fontFamily="@font/arvo" />
 
