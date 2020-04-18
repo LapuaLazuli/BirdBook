@@ -23,7 +23,7 @@ class BirdListPackage extends BirdPackage implements Package
             String newElement = nameEnum.nextElement();
             System.out.println("DEBUG: NEWELEMENT = " + newElement);
             names.add(newElement);
-            
+
             newElement = imageEnum.nextElement();
             System.out.println("DEBUG: NEWELEMENT = " + newElement);
             imageURLs.add(newElement);

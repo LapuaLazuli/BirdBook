@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Enumeration;
+import java.util.NoSuchElementException;
 
 //import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -95,11 +96,18 @@ public class Bird_List_Activity extends RecyclerView.Adapter<Bird_List_Activity.
 
            while (elements.hasMoreElements()) {
                //System.out.println(allBirds.get(elements));
-               birdName = elements.nextElement();
-               System.out.println("DEBUG: element (name): " + birdName);
-               imageName = elements.nextElement();
-               System.out.println("DEBUG: element (image): " + imageName);
-               birdList.add(new UI_List_Item(imageName, birdName));
+               try
+               {
+                   birdName = elements.nextElement();
+                   System.out.println("DEBUG: element (name): " + birdName);
+                   imageName = elements.nextElement();
+                   System.out.println("DEBUG: element (image): " + imageName);
+                   birdList.add(new UI_List_Item(imageName, birdName));
+               }
+               catch(NoSuchElementException nsee)
+               {
+                   System.out.println("ERROR: NO SUCH ELEMENT!");
+               }
            }
        } else
            System.out.println("ERROR: results in main activity are null");
