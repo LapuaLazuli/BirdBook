@@ -27,7 +27,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="95dp"
             android:layout_marginLeft="35dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
 
             android:ellipsize="end"
             android:text="Mock Up"
