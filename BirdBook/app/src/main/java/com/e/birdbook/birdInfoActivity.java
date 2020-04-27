@@ -19,6 +19,9 @@ import java.util.List;
 
 public class birdInfoActivity extends AppCompatActivity
 {
+    AudioPlayer player = new AudioPlayer(this, R.raw.american_crow);
+    boolean currentlyPlaying = false;
+
     @RequiresApi(api = Build.VERSION_CODES.O_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,7 @@ public class birdInfoActivity extends AppCompatActivity
             //apply UI friendly info
             loadUIfriendlyInfo(res);
         }
+
 
     }
 
@@ -82,5 +86,10 @@ public class birdInfoActivity extends AppCompatActivity
             }
         }
 
+    }
+
+    public void toggleAudio(View view)
+    {
+        player.toggleAudio();
     }
 }
