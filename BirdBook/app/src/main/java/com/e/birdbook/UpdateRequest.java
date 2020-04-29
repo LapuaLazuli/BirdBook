@@ -20,12 +20,12 @@ public class UpdateRequest implements Request
         this.newValues = null;
     }
 
-    public UpdateRequest(List<String> requestFields, String searchField, String searchValue, TYPE type, List newValues)
+    public UpdateRequest(List<String> requestFields, String searchField, String searchValue, List newValues)
     {
         this.requestFields = requestFields;
         this.searchField = searchField;
         this.searchValue = searchValue;
-        this.type = type;
+        this.type = TYPE.UPDATE;
         this.newValues = newValues;
     }
 
