@@ -9,16 +9,21 @@ public class AudioPlayer
 
     public AudioPlayer(Context context, int audioResource)
     {
-        this.player = new MediaPlayer();
+        //this.player = new MediaPlayer();
         try
         {
-            this.player = MediaPlayer.create(context, audioResource);
-            this.player.prepare();
+            this.player = MediaPlayer.create(context, R.raw.american_crow);
         }
         catch(Exception e)
         {
+            System.out.println("YOYOYO");
             e.printStackTrace();
         }
+    }
+
+    public void onPrepared(MediaPlayer player)
+    {
+        player.start();
     }
 
     public void toggleAudio()
