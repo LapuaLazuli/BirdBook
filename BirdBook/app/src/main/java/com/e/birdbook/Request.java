@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface Request {
 
-    enum TYPE{INVALID, BIRD, BIRDLIST}
+    enum TYPE{INVALID, BIRD, BIRDLIST, UPDATE}
 
     //returns a List of Strings which contain the names of the fields desired from the request
     public List<String> getRequestedFields();
