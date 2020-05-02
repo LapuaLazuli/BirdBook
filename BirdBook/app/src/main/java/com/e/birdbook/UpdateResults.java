@@ -1,27 +1,23 @@
 package com.e.birdbook;
 
-import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
-import java.util.List;
 
-//results from a request including info about a bird
-public class BirdInfoResults implements Results
+public class UpdateResults implements Results
 {
-
     private Dictionary<String, String> results;
     private Results.TYPE type;
 
-    public BirdInfoResults()
+    public UpdateResults()
     {
         this.results = new Hashtable<String, String>();
-        this.type = Results.TYPE.BIRD;
+        this.type = Results.TYPE.UPDATE;
     }
 
-    public BirdInfoResults(Dictionary<String, String> results)
+    public UpdateResults(Dictionary<String, String> results)
     {
         this.results = results;
-        this.type = Results.TYPE.BIRD;
+        this.type = Results.TYPE.UPDATE;
     }
 
     @Override
@@ -37,7 +33,7 @@ public class BirdInfoResults implements Results
     }
 
     @Override
-    public TYPE getType()
+    public Results.TYPE getType()
     {
         return this.type;
     }

@@ -41,6 +41,10 @@ public class Requester
                     UIinfo = BirdListContentPresenter.makeUIFriendly((BirdListPackage) bird);
                     break;
 
+                case UPDATE:
+                    UIinfo = UpdateContentPresenter.makeUIFriendly((updatePackage) bird);
+                    break;
+
                 case INVALID:
                 default:
                     System.out.println("ERROR: invalid type in requester");
