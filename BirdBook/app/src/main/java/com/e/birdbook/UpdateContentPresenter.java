@@ -5,7 +5,7 @@ import java.util.List;
 
 class UpdateContentPresenter
 {
-    public static UIFriendlyInfo makeUIFriendly(BirdPackage bird)
+    public static UIFriendlyInfo makeUIFriendly(UpdatePackage bird)
     {
         //output
         List<String> ui = new ArrayList<String>();
@@ -14,7 +14,7 @@ class UpdateContentPresenter
         try
         {
             ui.add("seenCheckbox");
-            values.add(bird.getSeenStatus());
+            values.add(bird.getSeenStatusString());
         }
         catch (NullPointerException e)
         {

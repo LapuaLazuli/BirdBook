@@ -15,6 +15,10 @@ public class Packager {
                 resultPackage = new BirdListPackage(bir);
                 break;
 
+            case UPDATE:
+                resultPackage = new UpdatePackage(bir);
+                break;
+
             case INVALID:
             default:
                 System.out.println("ERROR: unrecognized type");

@@ -42,7 +42,7 @@ public class Requester
                     break;
 
                 case UPDATE:
-                    UIinfo = UpdateContentPresenter.makeUIFriendly((updatePackage) bird);
+                    UIinfo = UpdateContentPresenter.makeUIFriendly((UpdatePackage) bird);
                     break;
 
                 case INVALID:
