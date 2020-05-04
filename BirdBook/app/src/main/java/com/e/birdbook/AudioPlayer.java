@@ -5,19 +5,22 @@ import android.media.MediaPlayer;
 
 public class AudioPlayer
 {
-    private MediaPlayer player;
+    private MediaPlayer player = null;
 
     public AudioPlayer(Context context, int audioResource)
     {
         //this.player = new MediaPlayer();
-        try
+        if(player == null)
         {
-            this.player = MediaPlayer.create(context, R.raw.american_crow);
-        }
-        catch(Exception e)
-        {
-            System.out.println("YOYOYO");
-            e.printStackTrace();
+            try
+            {
+                this.player = MediaPlayer.create(context, R.raw.american_crow);
+            }
+            catch(Exception e)
+            {
+                System.out.println("YOYOYO");
+                e.printStackTrace();
+            }
         }
     }
 
@@ -28,11 +31,13 @@ public class AudioPlayer
 
     public void toggleAudio()
     {
-        if (this.player.isPlaying())
-            this.player.pause();
-        else
-            this.player.start();
-
+        if(this.player != null)
+        {
+            if (this.player.isPlaying())
+                this.player.pause();
+            else
+                this.player.start();
+        }
     }
 
 }

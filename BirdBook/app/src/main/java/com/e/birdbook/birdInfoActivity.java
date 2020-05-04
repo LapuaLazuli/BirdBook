@@ -19,8 +19,9 @@ import java.util.List;
 
 public class birdInfoActivity extends AppCompatActivity
 {
-    AudioPlayer player = new AudioPlayer(this, R.raw.american_crow);
+    AudioPlayer player;
     boolean currentlyPlaying = false;
+    int callID = 0;
 
     @RequiresApi(api = Build.VERSION_CODES.O_MR1)
     @Override
@@ -29,6 +30,7 @@ public class birdInfoActivity extends AppCompatActivity
         setContentView(R.layout.bird_info_page);
         //get info about what page this is
         String birdName = getIntent().getStringExtra("Bird");
+
 
         if(birdName != null)
         {
@@ -40,8 +42,13 @@ public class birdInfoActivity extends AppCompatActivity
 
             //apply UI friendly info
             loadUIfriendlyInfo(res);
+
         }
 
+        if(callID != 0)
+            player = new AudioPlayer(this, callID);
+        else
+            player = null;
 
     }
 
@@ -61,35 +68,45 @@ public class birdInfoActivity extends AppCompatActivity
         for(int i = 0; i < ui.size(); i++)
         {
             currentUIElementName = ui.get(i);
-            resourceID = getResources().getIdentifier(currentUIElementName, "id", getPackageName());
-            currentUIElement = this.findViewById(resourceID);
 
-            if(currentUIElement != null)
+            if(currentUIElementName.equals("birdCall"))
             {
-                switch(currentUIElement.getClass().toString())
+                int callId = getResources().getIdentifier(values.get(i), "raw", getPackageName());
+            }
+            else
+            {
+                resourceID = getResources().getIdentifier(currentUIElementName, "id", getPackageName());
+                currentUIElement = this.findViewById(resourceID);
+
+                if(currentUIElement != null)
                 {
-                    case "class androidx.appcompat.widget.AppCompatTextView":
-                        TextView currentTextView = (TextView)currentUIElement;
-                        currentTextView.setText(values.get(i));
-                        break;
+                    switch(currentUIElement.getClass().toString())
+                    {
+                        case "class androidx.appcompat.widget.AppCompatTextView":
+                            TextView currentTextView = (TextView)currentUIElement;
+                            currentTextView.setText(values.get(i));
+                            break;
 
-                    case "class androidx.appcompat.widget.AppCompatImageView":
-                        ImageView currentImageView = (ImageView)currentUIElement;
-                        int imageId = getResources().getIdentifier(values.get(i), "drawable", getPackageName());
-                        currentImageView.setImageResource(imageId);
-                        break;
+                        case "class androidx.appcompat.widget.AppCompatImageView":
+                            ImageView currentImageView = (ImageView)currentUIElement;
+                            int imageId = getResources().getIdentifier(values.get(i), "drawable", getPackageName());
+                            currentImageView.setImageResource(imageId);
+                            break;
 
-                    default:
-                        System.out.println("DEBUG: unrecognized class: " + currentUIElement.getClass().toString());
-                        break;
+                        default:
+                            System.out.println("DEBUG: unrecognized class: " + currentUIElement.getClass().toString());
+                            break;
+                    }
                 }
             }
+
         }
 
     }
 
     public void toggleAudio(View view)
     {
-        player.toggleAudio();
+        if(player != null)
+            player.toggleAudio();
     }
 }
