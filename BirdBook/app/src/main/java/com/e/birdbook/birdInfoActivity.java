@@ -71,7 +71,15 @@ public class birdInfoActivity extends AppCompatActivity
 
             if(currentUIElementName.equals("birdCall"))
             {
-                int callId = getResources().getIdentifier(values.get(i), "raw", getPackageName());
+                try
+                {
+                    int callId = getResources().getIdentifier(values.get(i), "raw", getPackageName());
+                }
+                catch(NullPointerException npe)
+                {
+                    System.out.println("ERROR: Failed to get call resource ID" + npe.toString());
+                }
+
             }
             else
             {

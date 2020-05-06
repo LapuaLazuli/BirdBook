@@ -16,7 +16,7 @@
         android:layout_width="match_parent">
 
         <LinearLayout
-            android:id="@+id/audioButton"
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -40,10 +40,14 @@
 
             <Button
                 android:id="@+id/audio"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:text="Play/pause"
-                android:onClick="toggleAudio"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/audio_icon"
+                android:drawableLeft="@drawable/audio_icon"
+                android:onClick="toggleAudio"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/bird_call" />
 
             <View
                 android:id="@+id/dividerName"
