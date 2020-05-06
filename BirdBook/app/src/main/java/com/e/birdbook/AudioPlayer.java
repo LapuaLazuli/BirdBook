@@ -10,11 +10,12 @@ public class AudioPlayer
     public AudioPlayer(Context context, int audioResource)
     {
         //this.player = new MediaPlayer();
+        System.out.println("DEBUG: constructing audio player\n\n");
         if(player == null)
         {
             try
             {
-                this.player = MediaPlayer.create(context, R.raw.american_crow);
+                this.player = MediaPlayer.create(context, audioResource);
             }
             catch(Exception e)
             {

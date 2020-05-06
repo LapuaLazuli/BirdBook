@@ -14,17 +14,12 @@ public class Requester
         UIFriendlyInfo UIinfo = null;
         Results results = null;
 
-        System.out.println("DEBUG: Request checkpoint 1");
-
         try
         {
-            System.out.println("DEBUG: Request checkpoint 2");
             results = DBAcessor.access(request, context);
-            System.out.println("DEBUG: Request checkpoint 3");
         }
         catch (Exception e)
         {
-            System.out.println("DEBUG: Request Catching exception");
             e.printStackTrace();
         }
 

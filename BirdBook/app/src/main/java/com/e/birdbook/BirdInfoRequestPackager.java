@@ -21,6 +21,7 @@ public class BirdInfoRequestPackager
         requestFields.add("behavior");
         requestFields.add("conservation");
         requestFields.add("image_path");
+        requestFields.add("audio_path");
 
         return new BirdInfoRequest(requestFields, field, value, Request.TYPE.BIRD);
     }

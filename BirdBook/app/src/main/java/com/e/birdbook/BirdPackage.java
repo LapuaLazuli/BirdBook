@@ -25,7 +25,9 @@ public class BirdPackage implements Package
         setShape((String) d.get("shape"));
         setSize((String) d.get("size"));
         setImageURL((String) d.get("image_path"));
-        setCallURL((String) d.get("call_path"));
+        setCallURL((String) d.get("audio_path"));
+        System.out.println("DEBUG: audio path in package = " + d.get("audio_path"));
+
         this.type = Request.TYPE.BIRD;
     }
 

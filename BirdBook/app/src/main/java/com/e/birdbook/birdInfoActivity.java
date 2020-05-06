@@ -73,7 +73,9 @@ public class birdInfoActivity extends AppCompatActivity
             {
                 try
                 {
-                    int callId = getResources().getIdentifier(values.get(i), "raw", getPackageName());
+                    String nam = values.get(i);
+                    callID = getResources().getIdentifier(nam, "raw", getPackageName());
+                    System.out.println("DEBUG: nam = "+nam + " ; id = " + callID);
                 }
                 catch(NullPointerException npe)
                 {
@@ -116,5 +118,7 @@ public class birdInfoActivity extends AppCompatActivity
     {
         if(player != null)
             player.toggleAudio();
+        else
+            System.out.println("ERROR: CANNOT TOGGLE AUDIO, player is null");
     }
 }
