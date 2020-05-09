@@ -47,6 +47,9 @@ public class BirdInfoContentPresenter
 
             ui.add("infoConservation");
             values.add(bird.getConservation());
+
+            ui.add("birdCall"); //special case; see birdInfoActivity
+            values.add(bird.getCallURL());
         }
         catch (NullPointerException e)
         {

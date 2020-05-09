@@ -16,6 +16,7 @@
         android:layout_width="match_parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -37,6 +38,17 @@
                 android:layout_height="250dp"
                 android:layout_marginHorizontal="30dp" />
 
+            <Button
+                android:id="@+id/audio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/audio_icon"
+                android:drawableLeft="@drawable/audio_icon"
+                android:onClick="toggleAudio"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/bird_call" />
+
             <View
                 android:id="@+id/dividerName"
                 android:layout_width="match_parent"
@@ -53,9 +65,9 @@
                 android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/description"
+                android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000" />
+                app:fontFamily="@font/arvo" />
 
             <TextView
                 android:id="@+id/infoDescription"
@@ -68,9 +80,9 @@
                 android:padding="2dp"
                 android:scrollHorizontally="false"
                 android:text="Description Placeholder"
+                android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000" />
+                app:fontFamily="@font/arvo" />
 
             <View
                 android:id="@+id/dividerDescription"
@@ -88,24 +100,24 @@
                 android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/size"
+                android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000" />
+                app:fontFamily="@font/arvo" />
 
             <TextView
                 android:id="@+id/infoSize"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:minLines="1"
                 android:layout_weight="1"
-                android:scrollHorizontally="false"
                 android:ellipsize="end"
+                android:minLines="1"
                 android:padding="2dp"
+                android:scrollHorizontally="false"
                 android:text="Size Placeholder"
+                android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000"/>
+                app:fontFamily="@font/arvo" />
 
             <View
                 android:id="@+id/dividerSize"
@@ -123,24 +135,24 @@
                 android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/shape"
+                android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000"/>
+                app:fontFamily="@font/arvo" />
 
             <TextView
                 android:id="@+id/infoShape"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:layout_weight="1"
                 android:ellipsize="end"
                 android:minLines="1"
-                android:layout_weight="1"
-                android:scrollHorizontally="false"
                 android:padding="2dp"
+                android:scrollHorizontally="false"
                 android:text="Shape Placeholder"
+                android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000"/>
+                app:fontFamily="@font/arvo" />
 
             <View
                 android:id="@+id/dividerShape"
@@ -158,24 +170,24 @@
                 android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/finding"
+                android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000"/>
+                app:fontFamily="@font/arvo" />
 
             <TextView
                 android:id="@+id/infoFinding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:minLines="1"
                 android:layout_weight="1"
-                android:scrollHorizontally="false"
                 android:ellipsize="end"
+                android:minLines="1"
                 android:padding="2dp"
+                android:scrollHorizontally="false"
                 android:text="Finding Placeholder"
+                android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000" />
+                app:fontFamily="@font/arvo" />
 
             <View
                 android:id="@+id/dividerFinding"
@@ -193,24 +205,24 @@
                 android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/habitat"
+                android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000" />
+                app:fontFamily="@font/arvo" />
 
             <TextView
                 android:id="@+id/infoHabitat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:minLines="1"
                 android:layout_weight="1"
-                android:scrollHorizontally="false"
                 android:ellipsize="end"
+                android:minLines="1"
                 android:padding="2dp"
+                android:scrollHorizontally="false"
                 android:text="Habitat Placeholder"
+                android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000" />
+                app:fontFamily="@font/arvo" />
 
             <View
                 android:id="@+id/dividerHabitat"
@@ -228,24 +240,24 @@
                 android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/diet"
+                android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000" />
+                app:fontFamily="@font/arvo" />
 
             <TextView
                 android:id="@+id/infoDiet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:minLines="1"
                 android:layout_weight="1"
-                android:scrollHorizontally="false"
                 android:ellipsize="end"
+                android:minLines="1"
                 android:padding="2dp"
+                android:scrollHorizontally="false"
                 android:text="Diet Placeholder"
+                android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000"/>
+                app:fontFamily="@font/arvo" />
 
             <View
                 android:id="@+id/dividerDiet"
@@ -263,24 +275,24 @@
                 android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/nest"
+                android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000"/>
+                app:fontFamily="@font/arvo" />
 
             <TextView
                 android:id="@+id/infoNest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:minLines="1"
                 android:layout_weight="1"
-                android:scrollHorizontally="false"
                 android:ellipsize="end"
+                android:minLines="1"
                 android:padding="2dp"
+                android:scrollHorizontally="false"
                 android:text="Nest Placeholder"
+                android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000"/>
+                app:fontFamily="@font/arvo" />
 
             <View
                 android:id="@+id/dividerNest"
@@ -298,24 +310,24 @@
                 android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/behavior"
+                android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000"/>
+                app:fontFamily="@font/arvo" />
 
             <TextView
                 android:id="@+id/infoBehavior"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:minLines="1"
                 android:layout_weight="1"
-                android:scrollHorizontally="false"
                 android:ellipsize="end"
+                android:minLines="1"
                 android:padding="2dp"
+                android:scrollHorizontally="false"
                 android:text="Behavior Placeholder"
+                android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000"/>
+                app:fontFamily="@font/arvo" />
 
             <View
                 android:id="@+id/dividerBehavior"
@@ -333,24 +345,24 @@
                 android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/conservation"
+                android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000"/>
+                app:fontFamily="@font/arvo" />
 
             <TextView
                 android:id="@+id/infoConservation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:minLines="1"
                 android:layout_weight="1"
-                android:scrollHorizontally="false"
                 android:ellipsize="end"
+                android:minLines="1"
                 android:padding="2dp"
+                android:scrollHorizontally="false"
                 android:text="Conservation Placeholder"
+                android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo"
-                android:textColor="#000000"/>
+                app:fontFamily="@font/arvo" />
 
         </LinearLayout>
 
