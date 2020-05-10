@@ -6,7 +6,7 @@ public class BirdPackage implements Package
 {
 
     private String name, description, finding, habitat, diet, nest,
-                    behavior, conservation, size, shape, imageURL;
+                    behavior, conservation, size, shape, imageURL, callURL;
                     
     private Request.TYPE type;
 
@@ -25,6 +25,9 @@ public class BirdPackage implements Package
         setShape((String) d.get("shape"));
         setSize((String) d.get("size"));
         setImageURL((String) d.get("image_path"));
+        setCallURL((String) d.get("audio_path"));
+        System.out.println("DEBUG: audio path in package = " + d.get("audio_path"));
+
         this.type = Request.TYPE.BIRD;
     }
 
@@ -70,6 +73,8 @@ public class BirdPackage implements Package
 
     public void setImageURL(String imageURL) { this.imageURL = imageURL; }
 
+    public void setCallURL(String callURL) { this.callURL = callURL; }
+
     public String getName() {
         return name;
     }
@@ -111,6 +116,8 @@ public class BirdPackage implements Package
     }
 
     public String getImageURL() { return this.imageURL; }
+
+    public String getCallURL() { return this.callURL; }
 
     public Request.TYPE getType(){
         return type;
