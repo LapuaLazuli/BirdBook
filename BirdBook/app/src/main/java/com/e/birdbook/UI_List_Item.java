@@ -21,15 +21,5 @@ public class UI_List_Item //implements Parcelable
         return birdName;
     }
 
-//    @Override
-//    public int describeContents()
-//    {
-//        return 0;
-//    }
-//
-//    @Override
-//    public void writeToParcel(Parcel dest, int flags)
-//    {
-//
-//    }
+
 }

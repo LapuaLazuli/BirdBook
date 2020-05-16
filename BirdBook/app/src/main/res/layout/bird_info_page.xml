@@ -28,6 +28,7 @@
                 android:ellipsize="end"
                 android:padding="2dp"
                 android:text="Name placeholder"
+                android:layout_marginBottom="10dp"
                 android:textColor="#000000"
                 android:textSize="48sp"
                 app:fontFamily="@font/arvo" />
@@ -36,18 +37,17 @@
                 android:id="@+id/infoImage"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:layout_marginHorizontal="30dp" />
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
-            <Button
-                android:id="@+id/audio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/audio_icon"
-                android:drawableLeft="@drawable/audio_icon"
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:onClick="toggleAudio"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:text="@string/bird_call" />
+                app:srcCompat="@drawable/audio_icon_new"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <View
                 android:id="@+id/dividerName"
@@ -56,24 +56,27 @@
                 android:background="?android:attr/listDivider"
                 android:padding="5dp"
                 android:paddingTop="5dp"
-                android:paddingBottom="5dp" />
+                android:paddingBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:divider="@color/colorAccent"/>
 
             <TextView
                 android:id="@+id/descriptionHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/description"
                 android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:id="@+id/infoDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:layout_weight="1"
                 android:ellipsize="none"
                 android:minLines="1"
@@ -82,7 +85,9 @@
                 android:text="Description Placeholder"
                 android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <View
                 android:id="@+id/dividerDescription"
@@ -91,24 +96,27 @@
                 android:background="?android:attr/listDivider"
                 android:padding="5dp"
                 android:paddingTop="5dp"
-                android:paddingBottom="5dp" />
+                android:paddingBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:divider="@color/colorAccent"/>
 
             <TextView
                 android:id="@+id/sizeHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/size"
                 android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:id="@+id/infoSize"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:minLines="1"
@@ -117,7 +125,9 @@
                 android:text="Size Placeholder"
                 android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <View
                 android:id="@+id/dividerSize"
@@ -126,24 +136,27 @@
                 android:background="?android:attr/listDivider"
                 android:padding="5dp"
                 android:paddingTop="5dp"
-                android:paddingBottom="5dp" />
+                android:paddingBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:divider="@color/colorAccent"/>
 
             <TextView
                 android:id="@+id/shapeHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/shape"
                 android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:id="@+id/infoShape"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:minLines="1"
@@ -152,7 +165,9 @@
                 android:text="Shape Placeholder"
                 android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <View
                 android:id="@+id/dividerShape"
@@ -161,24 +176,27 @@
                 android:background="?android:attr/listDivider"
                 android:padding="5dp"
                 android:paddingTop="5dp"
-                android:paddingBottom="5dp" />
+                android:paddingBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:divider="@color/colorAccent"/>
 
             <TextView
                 android:id="@+id/FindingHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/finding"
                 android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:id="@+id/infoFinding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:minLines="1"
@@ -187,7 +205,9 @@
                 android:text="Finding Placeholder"
                 android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <View
                 android:id="@+id/dividerFinding"
@@ -196,24 +216,27 @@
                 android:background="?android:attr/listDivider"
                 android:padding="5dp"
                 android:paddingTop="5dp"
-                android:paddingBottom="5dp" />
+                android:paddingBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:divider="@color/colorAccent"/>
 
             <TextView
                 android:id="@+id/habitatHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/habitat"
                 android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:id="@+id/infoHabitat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:minLines="1"
@@ -222,7 +245,9 @@
                 android:text="Habitat Placeholder"
                 android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <View
                 android:id="@+id/dividerHabitat"
@@ -231,24 +256,27 @@
                 android:background="?android:attr/listDivider"
                 android:padding="5dp"
                 android:paddingTop="5dp"
-                android:paddingBottom="5dp" />
+                android:paddingBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:divider="@color/colorAccent"/>
 
             <TextView
                 android:id="@+id/dietHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/diet"
                 android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:id="@+id/infoDiet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:minLines="1"
@@ -257,7 +285,9 @@
                 android:text="Diet Placeholder"
                 android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <View
                 android:id="@+id/dividerDiet"
@@ -266,24 +296,27 @@
                 android:background="?android:attr/listDivider"
                 android:padding="5dp"
                 android:paddingTop="5dp"
-                android:paddingBottom="5dp" />
+                android:paddingBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:divider="@color/colorAccent"/>
 
             <TextView
                 android:id="@+id/nestHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/nest"
                 android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:id="@+id/infoNest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:minLines="1"
@@ -292,7 +325,9 @@
                 android:text="Nest Placeholder"
                 android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <View
                 android:id="@+id/dividerNest"
@@ -301,24 +336,27 @@
                 android:background="?android:attr/listDivider"
                 android:padding="5dp"
                 android:paddingTop="5dp"
-                android:paddingBottom="5dp" />
+                android:paddingBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:divider="@color/colorAccent"/>
 
             <TextView
                 android:id="@+id/behaviorHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/behavior"
                 android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:id="@+id/infoBehavior"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:minLines="1"
@@ -327,7 +365,9 @@
                 android:text="Behavior Placeholder"
                 android:textColor="#000000"
                 android:textSize="16sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <View
                 android:id="@+id/dividerBehavior"
@@ -336,24 +376,28 @@
                 android:background="?android:attr/listDivider"
                 android:padding="5dp"
                 android:paddingTop="5dp"
-                android:paddingBottom="5dp" />
+                android:paddingBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:divider="@color/colorAccent"/>
 
             <TextView
                 android:id="@+id/conservationHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:padding="2dp"
                 android:text="@string/conservation"
                 android:textColor="#000000"
                 android:textSize="32sp"
-                app:fontFamily="@font/arvo" />
+                app:fontFamily="@font/arvo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:id="@+id/infoConservation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:minLines="1"
