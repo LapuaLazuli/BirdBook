@@ -4,4 +4,14 @@
     <color name="colorPrimaryDark">#BABABA</color>
     <color name="colorAccent">#55b538</color>
     <color name="black">#000000</color>
+    <color name="listBackgroundColor1">#275427</color>
+    <color name="listBackgroundColor2">#163b16</color>
+    <color name="listBackgroundColor3">#2e7064</color>
+    <color name="listBackgroundColor4">#5d948a</color>
+    <color name="listBackgroundColor5">#31656b</color>
+    <color name="listBackgroundColor6">#98dae3</color>
+    <color name="listBackgroundColor7">#008294</color>
+    <color name="listBackgroundColor8">#c1a9e8</color>
+    <color name="listBackgroundColor">#3c344a</color>
+    <color name="listBackgroundColor10">#ffdc9c</color>
 </resources>
