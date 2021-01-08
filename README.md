@@ -2,6 +2,10 @@
 
 BirdBook is an android app designed to aid birdwatchers, both new and experienced.
 
+<img src="https://github.com/LapuaLazuli/BirdBook/blob/JFlaherty347-patch-1/readmeImages/Screenshot2.jpg" alt="app" width="150">
+
+<img src="https://github.com/LapuaLazuli/BirdBook/blob/JFlaherty347-patch-1/readmeImages/Screenshot1.jpg" alt="app" width="150">
+
 ## Problem statement
 
 Although birdwatching is an extremely rewarding experience, it does have a knowledge barrier that can make serious birdwatching a daunting task. Rather than lugging around cumbersome (and sometimes pricey) books of knowledge, BirdBook offers a way to get into birding that's quick, easy, and free. 
